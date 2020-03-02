@@ -1,3 +1,8 @@
 import React from "react"
+import Layout from "../components/Header"
 
-export default () => <div>Hello world!</div>
+export default () => (
+  <Header>
+    <div>Hello world!</div>
+  </Header>
+)

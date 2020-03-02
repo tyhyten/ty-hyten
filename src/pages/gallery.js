@@ -1,7 +1,10 @@
 import React from "react"
+import Header from "../components/Header"
 
 const Gallery = () => (
-  <p>this will be the gallery</p>
+  <Header>
+    <p>this is the gallery</p>
+  </Header>
 )
 
-export default Gallery;
+export default Gallery
