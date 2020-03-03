@@ -22,11 +22,12 @@ const Header = props => {
 
   return (
     <>
-      <Img fixed={data.file.childImageSharp.fixed} />
-      <Link to="/">Home</Link>
-      <Link to="/gallery">Photos</Link>
-      <Link to="/experience">Experience</Link>
-      <div>{props.children}</div>
+      <div style={{ marginBottom: "8px" }}>
+        <Img fixed={data.file.childImageSharp.fixed} />
+        <Link to="/gallery">Photo</Link>
+        <Link to="/experience">Development</Link>
+      </div>
+      {props.children}
     </>
   )
 }
