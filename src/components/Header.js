@@ -1,13 +1,26 @@
 import React from "react"
-import { Link } from "gatsby"
+import { Link, useStaticQuery } from "gatsby"
 
-const Layout = ({ children }) => (
-  <>
-    <Link to="/">Home</Link>
-    <Link to="/gallery">Photos</Link>
-    <Link to="/experience">Experience</Link>
-    <div style={{ margin: "45px" }}>{children}</div>
-  </>
-)
+const Header = props => {
+  const data = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          title
+        }
+      }
+    }
+  `)
 
-export default Layout
+  return (
+    <>
+      <h1>{data.site.siteMetadata.title}</h1>
+      <Link to="/">Home</Link>
+      <Link to="/gallery">Photos</Link>
+      <Link to="/experience">Experience</Link>
+      <div style={{ margin: "5px" }}>{props.children}</div>
+    </>
+  )
+}
+
+export default Header
