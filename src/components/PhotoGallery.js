@@ -14,6 +14,7 @@ const PhotoGallery = ({ images, itemsPerRow: itemsPerRowByBreakpoints }) => {
   )
   // TODO - perhaps do this with CSS grid auto-fill/auto-fit to simplify, and remove rebass
 
+  // TODO - randomize order of images, and delete duplicates
   return (
     <div>
       {images.map((image, i) => (

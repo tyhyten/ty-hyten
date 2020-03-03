@@ -1,7 +1,17 @@
 import Typography from "typography"
-import judahTheme from "typography-theme-judah"
+import moragaTheme from "typography-theme-moraga"
 
-const typography = new Typography(judahTheme)
+moragaTheme.overrideThemeStyles = () => ({
+  a: {
+    color: "black",
+    textTransform: "uppercase",
+  },
+  "a:hover": {
+    textDecoration: "none",
+  },
+})
+
+const typography = new Typography(moragaTheme)
 
 export const { scale, rhythm, options } = typography
 

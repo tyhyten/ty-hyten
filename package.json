@@ -16,16 +16,18 @@
   "dependencies": {
     "gatsby": "^2.19.7",
     "gatsby-image": "^2.2.42",
+    "gatsby-plugin-sass": "^2.1.29",
     "gatsby-plugin-sharp": "^2.4.5",
     "gatsby-plugin-typography": "^2.3.22",
     "gatsby-source-filesystem": "^2.1.48",
     "gatsby-transformer-sharp": "^2.3.16",
+    "node-sass": "^4.13.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-typography": "^0.16.19",
     "rebass": "^4.0.7",
     "typography": "^0.16.19",
-    "typography-theme-judah": "^0.16.19"
+    "typography-theme-moraga": "^0.16.19"
   },
   "devDependencies": {
     "prettier": "^1.19.1"

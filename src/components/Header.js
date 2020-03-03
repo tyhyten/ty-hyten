@@ -1,6 +1,7 @@
 import React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
+import "../styles/global.css"
 
 const Header = props => {
   const data = useStaticQuery(graphql`
@@ -21,14 +22,29 @@ const Header = props => {
   `)
 
   return (
-    <>
-      <div style={{ marginBottom: "8px" }}>
-        <Img fixed={data.file.childImageSharp.fixed} />
-        <Link to="/gallery">Photo</Link>
-        <Link to="/experience">Development</Link>
+    <div style={{ margin: "4px" }}>
+      <div
+        style={{
+          marginBottom: "4px",
+          display: "flex",
+          flexDirection: "row",
+          alignItems: "center",
+        }}
+      >
+        <Img fixed={data.file.childImageSharp.fixed} loading="lazy" />
+        <div
+          style={{
+            width: "300px",
+            justifyContent: "space-around",
+            display: "flex",
+          }}
+        >
+          <Link to="/gallery">photo</Link>
+          <Link to="/experience">development</Link>
+        </div>
       </div>
       {props.children}
-    </>
+    </div>
   )
 }
 
