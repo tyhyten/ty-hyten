@@ -1,5 +1,6 @@
 import React from "react"
-import { Link, useStaticQuery } from "gatsby"
+import { Link, useStaticQuery, graphql } from "gatsby"
+import Img from "gatsby-image"
 
 const Header = props => {
   const data = useStaticQuery(graphql`
@@ -9,16 +10,23 @@ const Header = props => {
           title
         }
       }
+      file(relativePath: { eq: "assets/tyhytenlogo.png" }) {
+        childImageSharp {
+          fixed(width: 90) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
     }
   `)
 
   return (
     <>
-      <h1>{data.site.siteMetadata.title}</h1>
+      <Img fixed={data.file.childImageSharp.fixed} />
       <Link to="/">Home</Link>
       <Link to="/gallery">Photos</Link>
       <Link to="/experience">Experience</Link>
-      <div style={{ margin: "5px" }}>{props.children}</div>
+      <div>{props.children}</div>
     </>
   )
 }

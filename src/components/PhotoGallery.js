@@ -12,7 +12,7 @@ const PhotoGallery = ({ images, itemsPerRow: itemsPerRowByBreakpoints }) => {
         sum(rowAspectRatios)
       )
   )
-  // TODO - perhaps do this with CSS grid auto-fill/auto-fit to simplify
+  // TODO - perhaps do this with CSS grid auto-fill/auto-fit to simplify, and remove rebass
 
   return (
     <div>
