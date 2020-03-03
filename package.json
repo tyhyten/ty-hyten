@@ -1,7 +1,7 @@
 {
-  "name": "gatsby-starter-hello-world",
+  "name": "ty-hyten",
   "private": true,
-  "description": "A simplified bare-bones starter for Gatsby",
+  "description": "photo gallery and resume site for Ty Hyten",
   "version": "0.1.0",
   "license": "MIT",
   "scripts": {
@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "gatsby": "^2.19.7",
+    "gatsby-source-filesystem": "^2.1.48",
     "react": "^16.12.0",
     "react-dom": "^16.12.0"
   },
@@ -23,9 +24,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-hello-world"
-  },
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/tyhyten/ty-hyten"
   }
 }
