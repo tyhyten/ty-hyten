@@ -24,10 +24,7 @@
     "node-sass": "^4.13.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "react-typography": "^0.16.19",
-    "rebass": "^4.0.7",
-    "typography": "^0.16.19",
-    "typography-theme-moraga": "^0.16.19"
+    "rebass": "^4.0.7"
   },
   "devDependencies": {
     "prettier": "^1.19.1"

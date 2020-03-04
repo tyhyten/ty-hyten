@@ -5,7 +5,7 @@ import Img from "gatsby-image"
 import { graphql, useStaticQuery } from "gatsby"
 import experienceJSON from "../data/content/experience.json"
 import { Box, Card, Flex } from "rebass"
-
+// TODO - perhaps have cards scroll up over whole header image
 const Experience = ({ data }) => {
   // TODO - can I move this outside of component
   useStaticQuery(graphql`
