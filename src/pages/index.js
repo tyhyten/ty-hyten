@@ -3,6 +3,6 @@ import Header from "../components/Header"
 
 export default () => (
   <Header>
-    <div>Hello world!</div>
+    <div>put photo boxes for code or photos here</div>
   </Header>
 )
