@@ -89,7 +89,7 @@ const Experience = ({ data }) => {
                 <Flex>
                   {/* TODO - these inline styles can probably go into box's sx prop */}
                   <Box
-                    width={1 / 4}
+                    width={1 / 5}
                     style={{
                       display: "flex",
                       flexDirection: "column",
@@ -98,7 +98,7 @@ const Experience = ({ data }) => {
                   >
                     <Img fixed={logos[job.slug]} />
                   </Box>
-                  <Box width={3 / 4}>
+                  <Box width={4 / 5}>
                     <h2>{job.company}</h2>
                     <h3>{job.role}</h3>
                     <h4>
