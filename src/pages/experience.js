@@ -10,10 +10,17 @@ const Experience = ({ data }) => {
   // TODO - can I move this outside of component
   useStaticQuery(graphql`
     query {
-      file(relativePath: { eq: "assets/ty-hyten-square.jpg" }) {
+      headShot: file(relativePath: { eq: "assets/ty-hyten-square.jpg" }) {
         childImageSharp {
           fixed(width: 200) {
             ...GatsbyImageSharpFixed
+          }
+        }
+      }
+      headerImage: file(relativePath: { eq: "images/1-TYH_8865.jpg" }) {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid
           }
         }
       }
@@ -49,10 +56,15 @@ const Experience = ({ data }) => {
   return (
     <Header>
       <div>
-        <div className="background-container" />
+        <div className="background-container">
+          <Img
+            fluid={data.headerImage.childImageSharp.fluid}
+            style={{ bottom: "194px" }}
+          />
+        </div>
         <div style={{ display: "flex", justifyContent: "center" }}>
           <Img
-            fixed={data.file.childImageSharp.fixed}
+            fixed={data.headShot.childImageSharp.fixed}
             style={{ borderRadius: "50%", position: "absolute", top: "105px" }}
           />
         </div>
