@@ -35,11 +35,17 @@ const Header = ({ children }) => {
     previousScrollPosition = scrollPosition
   }
 
+  const getLinkStyle = path => ({
+    ...(window.location.pathname === path && { color: "#802bb1" }),
+  })
+
   return (
     <div className="layout">
       <div id="navbar">
         {/* TODO - get rid of blur */}
-        <Img fixed={data.file.childImageSharp.fixed} loading="lazy" />
+        <Link to="/">
+          <Img fixed={data.file.childImageSharp.fixed} loading="lazy" />
+        </Link>
         <div
           style={{
             width: "300px",
@@ -47,8 +53,12 @@ const Header = ({ children }) => {
             display: "flex",
           }}
         >
-          <Link to="/gallery">photo</Link>
-          <Link to="/experience">development</Link>
+          <Link to="/gallery" style={getLinkStyle("/gallery")}>
+            photography
+          </Link>
+          <Link to="/experience" style={getLinkStyle("/experience")}>
+            development
+          </Link>
         </div>
       </div>
       {children}

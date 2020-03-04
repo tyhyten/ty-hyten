@@ -25,6 +25,8 @@ a:visited {
   color: inherit;
 }
 
+/* TODO - move colors and font sizes to a shared theme stylesheet */
+
 a:hover {
   text-decoration: none;
   color: #802bb1;
