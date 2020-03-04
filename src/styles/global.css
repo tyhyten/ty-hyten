@@ -2,6 +2,7 @@ p {
   font-family: Didact Gothic;
 }
 
+a,
 h2,
 h1,
 h2,
@@ -13,9 +14,20 @@ h6 {
   margin: 8px 0;
 }
 
-h3 {
+h3,
+a {
   text-transform: uppercase;
   font-size: 14px;
+  text-decoration: none;
+}
+
+a:visited {
+  color: inherit;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #802bb1;
 }
 
 h4 {
