@@ -31,8 +31,8 @@ export default ({ data }) => {
 
   return (
     <Header>
-      <Flex mt={4} style={{ alignItems: "center" }}>
-        <Box width={1 / 2}>
+      <Flex flexWrap="wrap" mt={4}>
+        <Box width={[1, 1 / 2]} pb={4}>
           <div style={{ textAlign: "center", position: "relative" }}>
             <h1
               style={{
@@ -53,10 +53,7 @@ export default ({ data }) => {
             />
           </div>
         </Box>
-        <div style={{ margin: "auto" }}>
-          <h3>or</h3>
-        </div>
-        <Box width={1 / 2}>
+        <Box width={[1, 1 / 2]}>
           <div style={{ textAlign: "center", position: "relative" }}>
             <h1
               style={{
@@ -66,7 +63,7 @@ export default ({ data }) => {
                 top: "50%",
                 left: "50%",
                 transform: "translate(-50%, -50%)",
-                fontSize: "2em",
+                fontSize: "3vw", // make this and other things a class in here to DRY this up
               }}
             >
               development
