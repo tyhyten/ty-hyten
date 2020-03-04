@@ -1,0 +1,10 @@
+.nav-image {
+  border-radius: 50%;
+  max-width: 80%;
+  transition: max-width 0.5s ease;
+  margin: 0 auto;
+}
+
+.nav-image:hover {
+  max-width: 90%;
+}
