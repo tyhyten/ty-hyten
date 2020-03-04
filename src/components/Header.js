@@ -3,7 +3,7 @@ import { Link, useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import "../styles/global.css"
 // TODO - rename to layout
-const Header = props => {
+const Header = ({ children }) => {
   const data = useStaticQuery(graphql`
     query {
       site {
@@ -19,7 +19,9 @@ const Header = props => {
         }
       }
     }
-  `) // TODO - see if can grab this off of props instead of variable
+  `)
+
+  // TODO - make sticky
 
   return (
     <div style={{ margin: "4px" }}>
@@ -43,9 +45,11 @@ const Header = props => {
           <Link to="/experience">development</Link>
         </div>
       </div>
-      {props.children}
+      {children}
     </div>
   )
 }
+
+// TODO - add propTypes to all components
 
 export default Header
