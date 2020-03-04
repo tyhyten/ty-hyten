@@ -1,5 +1,11 @@
 .background-container {
   height: 190px;
   overflow: hidden;
+  .header-image {
+    bottom: 194px;
+    @media (max-width: 700px) {
+      bottom: 20px;
+    }
+  }
 }
 // TODO - move all styles to stylesheets or to CSS in JS

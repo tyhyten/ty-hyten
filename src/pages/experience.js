@@ -59,7 +59,7 @@ const Experience = ({ data }) => {
         <div className="background-container">
           <Img
             fluid={data.headerImage.childImageSharp.fluid}
-            style={{ bottom: "194px" }}
+            className="header-image"
           />
         </div>
         <div style={{ display: "flex", justifyContent: "center" }}>
