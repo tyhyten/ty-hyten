@@ -34,8 +34,8 @@ export default ({ data }) => {
             fluid={data.photographyImage.childImageSharp.fluid}
           />
         </Box>
-        <div style={{ margin: "0 40px" }}>
-          <h2>or</h2>
+        <div style={{ margin: "auto" }}>
+          <h3>or</h3>
         </div>
         <Box width={1 / 2}>
           <Img
