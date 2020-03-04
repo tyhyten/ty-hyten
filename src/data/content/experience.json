@@ -1,0 +1,57 @@
+[
+  {
+    "company": "AngelMD",
+    "role": "Software Developer",
+    "location": "Denver, CO",
+    "time": {
+      "startDate": "September 2019",
+      "endDate": "Current"
+    },
+    "description": "Working as a full stack developer on the AngelMD platform, a web app that connects medical startups, physicians, and investors. Responsibilities include adding new features to the AngelMD web app (React and Ruby-on-Rails) and helping build the new AngelMD mobile app (React Native).",
+    "slug": "angelmd"
+  },
+  {
+    "company": "Vangst",
+    "role": "Senior Full Stack Developer",
+    "location": "Denver, CO",
+    "time": {
+      "startDate": "June 2018",
+      "endDate": "September 2019"
+    },
+    "description": "Worked on Vangst GIGS, a web application connecting employers with temporary work in the cannabis industry,  built with React and Node. Responsibilities include writing new features, conducting code reviews, mentoring, and assisting with architecture decisions.",
+    "slug": "vangst"
+  },
+  {
+    "company": "SourceLab",
+    "role": "Full Stack Developer",
+    "location": "Denver, CO",
+    "time": {
+      "startDate": "July 2017",
+      "endDate": "June 2018"
+    },
+    "description": "Clients: Gloo, Thrivent, and The Flyfisher Group. Helped to build a serverless application from the ground up that administers surveys and provides visual data to users, built with React and Node, using AWS Lambda. Also helped build a booking and management system for a fly fishing guide service in Angular and Ruby On Rails.",
+    "slug": "sourcelab"
+  },
+  {
+    "company": "Acumen Digital",
+    "role": "Software Developer",
+    "location": "Denver, CO",
+    "time": {
+      "startDate": "July 2015",
+      "endDate": "July 2017"
+    },
+    "description": "Client: Sling TV. Worked as a front end developer on sling.com. Responsibilities included building and maintaining the shopping cart and account features in AngularJS, modifying supporting APIs in Ruby On Rails, leading a front end community of practice, and training new developers.",
+    "slug": "acumen_digital"
+  },
+  {
+    "company": "ServiceSource International",
+    "role": "Renewals Account Manager",
+    "location": "Denver, CO",
+    "time": {
+      "startDate": "August 2010",
+      "endDate": "December 2014"
+    },
+    "description": "Managed and expanded existing relationships for client, VMware, Inc. Focused on strategic, high-dollar accounts. Developed relationships with channel partners. Personally responsible for $25M in bookings.",
+    "slug": "service_source"
+  }
+]
