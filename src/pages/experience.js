@@ -7,6 +7,7 @@ import experienceJSON from "../data/content/experience.json"
 import { Box, Card, Flex } from "rebass"
 
 const Experience = ({ data }) => {
+  // TODO - can I move this outside of component
   useStaticQuery(graphql`
     query {
       file(relativePath: { eq: "assets/ty-hyten-square.jpg" }) {
