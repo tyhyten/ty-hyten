@@ -2,7 +2,7 @@ import React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import "../styles/global.css"
-
+// TODO - rename to layout
 const Header = props => {
   const data = useStaticQuery(graphql`
     query {
@@ -19,7 +19,7 @@ const Header = props => {
         }
       }
     }
-  `)
+  `) // TODO - see if can grab this off of props instead of variable
 
   return (
     <div style={{ margin: "4px" }}>
