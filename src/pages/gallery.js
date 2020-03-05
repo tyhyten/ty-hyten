@@ -29,9 +29,11 @@ const Gallery = ({ data }) => {
   return (
     <Header>
       <PhotoGallery
-        images={data.allFile.edges.map(({ node }) => ({
-          ...node.childImageSharp.fluid,
-        }))}
+        images={data.allFile.edges
+          .sort(() => 0.5 - Math.random())
+          .map(({ node }) => ({
+            ...node.childImageSharp.fluid,
+          }))}
         itemsPerRow={[1, 3]}
       />
     </Header>
