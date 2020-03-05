@@ -30,7 +30,7 @@ const PhotoGallery = ({ images, itemsPerRow: itemsPerRowByBreakpoints }) => {
           )}
           css={{ display: "inline-block" }}
         >
-          <Img fluid={image} loading="lazy" />
+          <Img fluid={image} loading="lazy" imgStyle={{ padding: "0px 4px" }} />
         </Box>
       ))}
     </div>
