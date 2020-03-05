@@ -38,7 +38,8 @@ const Header = ({ children }) => {
   }
 
   const getLinkStyle = path => ({
-    ...(window.location.pathname === path && { color: "#802bb1" }),
+    ...(typeof window !== `undefined` &&
+      window.location.pathname === path && { color: "#802bb1" }),
   })
 
   return (
