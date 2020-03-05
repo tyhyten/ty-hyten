@@ -30,7 +30,7 @@ const Gallery = ({ data }) => {
     <Header>
       <PhotoGallery
         images={data.allFile.edges
-          .sort(() => 0.5 - Math.random())
+          // .sort(() => 0.5 - Math.random()) // TODO - find a way to make random work with gallery
           .map(({ node }) => ({
             ...node.childImageSharp.fluid,
           }))}
