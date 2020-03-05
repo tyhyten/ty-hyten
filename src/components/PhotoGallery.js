@@ -5,8 +5,14 @@ import { Box } from "rebass"
 import Carousel, { Modal, ModalGateway } from "react-images"
 
 const PhotoGallery = ({ images, itemsPerRow: itemsPerRowByBreakpoints }) => {
-  const [isModalOpen, setIsModalOpen] = useState(true)
+  const [isModalOpen, setIsModalOpen] = useState(false)
+  const [imageIndex, setImageIndex] = useState(0)
+
   const toggleModal = () => setIsModalOpen(!isModalOpen)
+  const handleImageClick = imageIndex => {
+    toggleModal()
+    setImageIndex(imageIndex)
+  }
 
   const aspectRatios = images.map(image => image.aspectRatio) // TODO - replace this with a reduce
 
@@ -32,6 +38,7 @@ const PhotoGallery = ({ images, itemsPerRow: itemsPerRowByBreakpoints }) => {
             }
           )}
           css={{ display: "inline-block" }}
+          onClick={() => handleImageClick(i)}
         >
           <Img fluid={image} loading="lazy" imgStyle={{ padding: "0px 4px" }} />
         </Box>
@@ -39,7 +46,7 @@ const PhotoGallery = ({ images, itemsPerRow: itemsPerRowByBreakpoints }) => {
       <ModalGateway>
         {isModalOpen && (
           <Modal onClose={toggleModal}>
-            <Carousel views={images} />
+            <Carousel views={images} currentIndex={imageIndex} />
           </Modal>
         )}
       </ModalGateway>
