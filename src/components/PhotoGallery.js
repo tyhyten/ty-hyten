@@ -1,9 +1,13 @@
 import Img from "gatsby-image"
 import { chunk, sum } from "lodash" // TODO - remove lodash
-import React from "react"
-import { Box } from "rebass" // TODO - add this to package.json
+import React, { useState } from "react"
+import { Box } from "rebass"
+import Carousel, { Modal, ModalGateway } from "react-images"
 
 const PhotoGallery = ({ images, itemsPerRow: itemsPerRowByBreakpoints }) => {
+  const [isModalOpen, setIsModalOpen] = useState(true)
+  const toggleModal = () => setIsModalOpen(!isModalOpen)
+
   const aspectRatios = images.map(image => image.aspectRatio) // TODO - replace this with a reduce
 
   const rowAspectRatioSumsByBreakpoints = itemsPerRowByBreakpoints.map(
@@ -14,7 +18,6 @@ const PhotoGallery = ({ images, itemsPerRow: itemsPerRowByBreakpoints }) => {
   )
   // TODO - perhaps do this with CSS grid auto-fill/auto-fit to simplify, and remove rebass
 
-  // TODO - randomize order of images, and delete duplicates
   return (
     <div>
       {images.map((image, i) => (
@@ -33,6 +36,13 @@ const PhotoGallery = ({ images, itemsPerRow: itemsPerRowByBreakpoints }) => {
           <Img fluid={image} loading="lazy" imgStyle={{ padding: "0px 4px" }} />
         </Box>
       ))}
+      <ModalGateway>
+        {isModalOpen && (
+          <Modal onClose={toggleModal}>
+            <Carousel views={images} />
+          </Modal>
+        )}
+      </ModalGateway>
     </div>
   )
 }

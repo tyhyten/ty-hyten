@@ -23,6 +23,7 @@
     "node-sass": "^4.13.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
+    "react-images": "^1.1.0-beta.3",
     "rebass": "^4.0.7",
     "typeface-didact-gothic": "0.0.72",
     "typeface-lexend-deca": "^1.1.3"
