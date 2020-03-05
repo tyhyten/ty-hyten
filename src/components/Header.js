@@ -2,7 +2,6 @@ import React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import "../styles/header.scss"
-import { window, document } from "browser-monads"
 
 // TODO - rename to layout
 const Header = ({ children }) => {
@@ -25,15 +24,17 @@ const Header = ({ children }) => {
 
   let previousScrollPosition = window.pageYOffset
 
-  window.onscroll = () => {
-    const scrollPosition = window.pageYOffset
+  if (typeof window !== `undefined`) {
+    window.onscroll = () => {
+      const scrollPosition = window.pageYOffset
 
-    if (previousScrollPosition > scrollPosition) {
-      document.getElementById("navbar").style.top = "0"
-    } else {
-      document.getElementById("navbar").style.top = "-80px"
+      if (previousScrollPosition > scrollPosition) {
+        document.getElementById("navbar").style.top = "0"
+      } else {
+        document.getElementById("navbar").style.top = "-80px"
+      }
+      previousScrollPosition = scrollPosition
     }
-    previousScrollPosition = scrollPosition
   }
 
   const getLinkStyle = path => ({
