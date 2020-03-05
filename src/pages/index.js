@@ -33,10 +33,16 @@ export default ({ data }) => {
 
   const handlePhotographyClick = () => navigate("/experience")
 
+  // TODO - make the boxes into shared components since they're identical
   return (
     <Header>
       <Flex flexWrap="wrap" mt={4}>
-        <Box width={[1, 1 / 2]} pb={4} onClick={handlePhotographyClick} style={{ cursor: "pointer" }}>
+        <Box
+          width={[1, 1 / 2]}
+          pb={4}
+          onClick={handlePhotographyClick}
+          style={{ cursor: "pointer" }}
+        >
           <div style={{ textAlign: "center", position: "relative" }}>
             <h1
               style={{
@@ -58,7 +64,11 @@ export default ({ data }) => {
             />
           </div>
         </Box>
-        <Box width={[1, 1 / 2]} onClick={handleDevelopmentClick} style={{ cursor: "pointer" }}>
+        <Box
+          width={[1, 1 / 2]}
+          onClick={handleDevelopmentClick}
+          style={{ cursor: "pointer" }}
+        >
           <div style={{ textAlign: "center", position: "relative" }}>
             <h1
               style={{
