@@ -75,21 +75,22 @@ const Experience = ({ data }) => {
               sx={{
                 maxWidth: 900,
                 mx: "auto",
-                px: 3,
+                px: [1, 3],
               }}
             >
               <Card
                 sx={{
-                  p: 4,
-                  m: 4,
+                  p: [3, 4],
+                  mx: [0, 4],
+                  mb: [3, 4],
                   boxShadow: "0 0 4px rgba(0, 0, 0, .25)",
                   borderRadius: 15,
                 }}
               >
-                <Flex>
+                <Flex flexWrap="wrap">
                   {/* TODO - these inline styles can probably go into box's sx prop */}
                   <Box
-                    width={1 / 5}
+                    width={[1, 1 / 5]}
                     style={{
                       display: "flex",
                       flexDirection: "column",
@@ -98,7 +99,7 @@ const Experience = ({ data }) => {
                   >
                     <Img fixed={logos[job.slug]} />
                   </Box>
-                  <Box width={4 / 5}>
+                  <Box width={[1, 4 / 5]}>
                     <h2>{job.company}</h2>
                     <h3>{job.role}</h3>
                     <h4>
