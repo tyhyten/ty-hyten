@@ -1,7 +1,7 @@
 import React from "react"
 import Header from "../components/Header"
 import Img from "gatsby-image"
-import { graphql, useStaticQuery } from "gatsby"
+import { graphql, navigate, useStaticQuery } from "gatsby"
 import { Box, Flex } from "rebass"
 import "../styles/index.scss"
 
@@ -29,13 +29,18 @@ export default ({ data }) => {
     }
   `)
 
+  const handleDevelopmentClick = () => navigate("/gallery")
+
+  const handlePhotographyClick = () => navigate("/experience")
+
   return (
     <Header>
       <Flex flexWrap="wrap" mt={4}>
-        <Box width={[1, 1 / 2]} pb={4}>
+        <Box width={[1, 1 / 2]} pb={4} onClick={handlePhotographyClick} style={{ cursor: "pointer" }}>
           <div style={{ textAlign: "center", position: "relative" }}>
             <h1
               style={{
+                pointerEvents: "none",
                 color: "white",
                 zIndex: "3",
                 position: "absolute",
@@ -53,10 +58,11 @@ export default ({ data }) => {
             />
           </div>
         </Box>
-        <Box width={[1, 1 / 2]}>
+        <Box width={[1, 1 / 2]} onClick={handleDevelopmentClick} style={{ cursor: "pointer" }}>
           <div style={{ textAlign: "center", position: "relative" }}>
             <h1
               style={{
+                pointerEvents: "none",
                 color: "white",
                 zIndex: "1",
                 position: "absolute",
