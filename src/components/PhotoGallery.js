@@ -24,6 +24,7 @@ const PhotoGallery = ({ images, itemsPerRow: itemsPerRowByBreakpoints }) => {
       )
   )
   // TODO - perhaps do this with CSS grid auto-fill/auto-fit to simplify, and remove rebass
+  // TODO - add SEO stuff
 
   const ImageModal = ({ images, photoIndex }) => {
     const fullQualityImages = useStaticQuery(graphql`
@@ -80,6 +81,7 @@ const PhotoGallery = ({ images, itemsPerRow: itemsPerRowByBreakpoints }) => {
           )}
           css={{ display: "inline-block" }}
           onClick={() => handleImageClick(i)}
+          style={{ cursor: "pointer" }}
         >
           <Img fluid={image} loading="lazy" imgStyle={{ padding: "0px 4px" }} />
         </Box>
