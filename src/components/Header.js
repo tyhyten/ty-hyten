@@ -22,9 +22,9 @@ const Header = ({ children }) => {
     }
   `)
 
-  let previousScrollPosition = window.pageYOffset
-
   if (typeof window !== `undefined`) {
+    let previousScrollPosition = window.pageYOffset
+
     window.onscroll = () => {
       const scrollPosition = window.pageYOffset
 
