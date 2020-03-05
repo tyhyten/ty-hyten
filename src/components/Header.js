@@ -30,7 +30,7 @@ const Header = ({ children }) => {
     if (previousScrollPosition > scrollPosition) {
       document.getElementById("navbar").style.top = "0"
     } else {
-      document.getElementById("navbar").style.top = "-65px"
+      document.getElementById("navbar").style.top = "-80px"
     }
     previousScrollPosition = scrollPosition
   }
