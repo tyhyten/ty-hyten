@@ -37,7 +37,7 @@ const PhotoGallery = ({ images, itemsPerRow: itemsPerRowByBreakpoints }) => {
           edges {
             node {
               childImageSharp {
-                fixed(quality: 100, width: 1200) {
+                fixed(quality: 100, width: 1000) {
                   aspectRatio
                   ...GatsbyImageSharpFixed
                 }

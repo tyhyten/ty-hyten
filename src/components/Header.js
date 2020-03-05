@@ -2,6 +2,7 @@ import React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import "../styles/header.scss"
+import { window, document } from "browser-monads"
 
 // TODO - rename to layout
 const Header = ({ children }) => {
