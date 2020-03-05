@@ -29,14 +29,14 @@ export default ({ data }) => {
     }
   `)
 
-  const handleDevelopmentClick = () => navigate("/gallery")
+  const handleDevelopmentClick = () => navigate("/experience")
 
-  const handlePhotographyClick = () => navigate("/experience")
+  const handlePhotographyClick = () => navigate("/gallery")
 
   // TODO - make the boxes into shared components since they're identical
   return (
     <Header>
-      <Flex flexWrap="wrap" mt={4}>
+      <Flex flexWrap="wrap" pt={[3, "5%"]}>
         <Box
           width={[1, 1 / 2]}
           pb={4}

@@ -65,10 +65,10 @@ const Experience = ({ data }) => {
         <div style={{ display: "flex", justifyContent: "center" }}>
           <Img
             fixed={data.headShot.childImageSharp.fixed}
-            style={{ borderRadius: "50%", position: "absolute", top: "105px" }}
+            style={{ borderRadius: "50%", position: "absolute", top: "126px" }}
           />
         </div>
-        <div className="experience-container" style={{ marginTop: "90px" }}>
+        <Box mt={[4, 3]} className="experience-container">
           {experienceJSON.map(job => (
             <Box
               key={job.slug}
@@ -88,18 +88,21 @@ const Experience = ({ data }) => {
                 }}
               >
                 <Flex flexWrap="wrap">
-                  {/* TODO - these inline styles can probably go into box's sx prop */}
                   <Box
                     width={[1, 1 / 5]}
-                    style={{
+                    sx={{
                       display: "flex",
-                      flexDirection: "column",
+                      flexDirection: ["row", "column"],
                       justifyContent: "center",
                     }}
+                    my={[3, 0]}
                   >
                     <Img fixed={logos[job.slug]} />
                   </Box>
-                  <Box width={[1, 4 / 5]}>
+                  <Box
+                    width={[1, 4 / 5]}
+                    sx={{ textAlign: ["center", "left"] }}
+                  >
                     <h2>{job.company}</h2>
                     <h3>{job.role}</h3>
                     <h4>
@@ -111,7 +114,7 @@ const Experience = ({ data }) => {
               </Card>
             </Box>
           ))}
-        </div>
+        </Box>
       </div>
     </Header>
   )
