@@ -15,7 +15,7 @@ const PhotoGallery = ({ images, itemsPerRow: itemsPerRowByBreakpoints }) => {
     setImageIndex(imageIndex)
   }
 
-  const aspectRatios = images.map(image => image.aspectRatio) // TODO - replace this with a reduce
+  const aspectRatios = images.map(image => image.aspectRatio)
 
   const rowAspectRatioSumsByBreakpoints = itemsPerRowByBreakpoints.map(
     itemsPerRow =>
@@ -27,7 +27,7 @@ const PhotoGallery = ({ images, itemsPerRow: itemsPerRowByBreakpoints }) => {
   // TODO - add SEO stuff
 
   const ImageModal = ({ images, photoIndex }) => {
-    const fullQualityImages = useStaticQuery(graphql`
+    const highResImages = useStaticQuery(graphql`
       query {
         allFile(
           filter: {
@@ -51,7 +51,7 @@ const PhotoGallery = ({ images, itemsPerRow: itemsPerRowByBreakpoints }) => {
 
     // TODO - need to get a carousel that uses Img component to lead images as you click through, rather than all at once
 
-    const fullies = fullQualityImages.allFile.edges.map(({ node }) => ({
+    const modalImages = highResImages.allFile.edges.map(({ node }) => ({
       ...node.childImageSharp.fixed,
     }))
 
@@ -59,7 +59,7 @@ const PhotoGallery = ({ images, itemsPerRow: itemsPerRowByBreakpoints }) => {
       <ModalGateway>
         {isModalOpen && (
           <Modal onClose={toggleModal}>
-            <Carousel views={fullies} currentIndex={imageIndex} />
+            <Carousel views={modalImages} currentIndex={imageIndex} />
           </Modal>
         )}
       </ModalGateway>
