@@ -6,7 +6,6 @@ import { graphql, useStaticQuery } from "gatsby"
 import experienceJSON from "../data/content/experience.json"
 import { Box, Card, Flex } from "rebass"
 
-// TODO - perhaps have cards scroll up over whole header image
 // TODO - include social media links up top
 
 const Experience = ({ data }) => {

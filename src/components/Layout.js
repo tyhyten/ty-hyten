@@ -1,9 +1,8 @@
 import React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
-import "../styles/header.scss"
+import "../styles/layout.scss"
 
-// TODO - rename to layout
 const isWindowPresent = typeof window !== `undefined`
 
 const Layout = ({ children }) => {
@@ -14,7 +13,7 @@ const Layout = ({ children }) => {
           title
         }
       }
-      file(relativePath: { eq: "assets/tyhytenlogo.png" }) {
+      file(relativePath: { eq: "assets/ty-hyten-logo.png" }) {
         childImageSharp {
           fixed(width: 90) {
             ...GatsbyImageSharpFixed
