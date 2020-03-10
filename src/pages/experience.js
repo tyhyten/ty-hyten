@@ -1,5 +1,5 @@
 import React from "react"
-import Header from "../components/Header"
+import Layout from "../components/Layout"
 import "../styles/experience.scss"
 import Img from "gatsby-image"
 import { graphql, useStaticQuery } from "gatsby"
@@ -57,7 +57,7 @@ const Experience = ({ data }) => {
   }, {})
 
   return (
-    <Header>
+    <Layout>
       <div>
         <div className="background-container">
           <Img
@@ -119,7 +119,7 @@ const Experience = ({ data }) => {
           ))}
         </Box>
       </div>
-    </Header>
+    </Layout>
   )
 }
 

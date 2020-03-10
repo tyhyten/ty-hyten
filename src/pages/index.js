@@ -1,5 +1,5 @@
 import React from "react"
-import Header from "../components/Header"
+import Layout from "../components/Layout"
 import Img from "gatsby-image"
 import { graphql, navigate, useStaticQuery } from "gatsby"
 import { Box, Flex } from "rebass"
@@ -35,7 +35,7 @@ export default ({ data }) => {
 
   // TODO - make the boxes into shared components since they're identical
   return (
-    <Header>
+    <Layout>
       <Flex flexWrap="wrap" pt={[3, "5%"]}>
         <Box
           width={[1, 1 / 2]}
@@ -91,6 +91,6 @@ export default ({ data }) => {
           </div>
         </Box>
       </Flex>
-    </Header>
+    </Layout>
   )
 }

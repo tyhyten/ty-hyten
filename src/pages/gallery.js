@@ -1,5 +1,5 @@
 import React from "react"
-import Header from "../components/Header"
+import Layout from "../components/Layout"
 import PhotoGallery from "../components/PhotoGallery"
 import { useStaticQuery, graphql } from "gatsby"
 
@@ -27,7 +27,7 @@ const Gallery = ({ data }) => {
   `)
 
   return (
-    <Header>
+    <Layout>
       <PhotoGallery
         images={data.allFile.edges
           // .sort(() => 0.5 - Math.random()) // TODO - find a way to make random work with gallery
@@ -36,7 +36,7 @@ const Gallery = ({ data }) => {
           }))}
         itemsPerRow={[1, 3]}
       />
-    </Header>
+    </Layout>
   )
 }
 
