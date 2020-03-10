@@ -65,7 +65,7 @@ const Header = ({ children }) => {
         </div>
       </div>
       {children}
-      <div style={{ height: "200px" }}>I'm the footer</div>
+      {/* <div style={{ height: "200px" }}>I'm the footer</div> */}
     </div>
   )
 }
