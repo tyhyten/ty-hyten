@@ -29,7 +29,7 @@ const Experience = ({ data }) => {
       allFile(
         filter: {
           extension: { regex: "/(png)/" }
-          relativeDirectory: { eq: "logos" }
+          relativeDirectory: { eq: "companyLogos" }
         }
       ) {
         edges {
@@ -46,7 +46,7 @@ const Experience = ({ data }) => {
     }
   `)
 
-  const logos = data.allFile.edges.reduce((acc, { node }) => {
+  const companyLogos = data.allFile.edges.reduce((acc, { node }) => {
     return {
       ...acc,
       [node.name]: {
@@ -99,7 +99,7 @@ const Experience = ({ data }) => {
                     }}
                     my={[3, 0]}
                   >
-                    <Img fixed={logos[job.slug]} />
+                    <Img fixed={companyLogos[job.slug]} />
                   </Box>
                   <Box
                     width={[1, 4 / 5]}
