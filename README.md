@@ -25,3 +25,4 @@ This is the repo for tyhyten.com, my concert photography portfolio and resume.
 - Add build badge
 - Contact form
 - Footer
+- Write tests

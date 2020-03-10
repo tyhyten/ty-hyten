@@ -48,7 +48,7 @@ const Layout = ({ children }) => {
       <div id="navbar">
         <Link to="/">
           <Img
-            fadeIn="false"
+            fadeIn={false}
             fixed={logo.file.childImageSharp.fixed}
             loading="eager"
           />
