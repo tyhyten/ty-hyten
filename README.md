@@ -22,3 +22,7 @@ This is the repo for tyhyten.com, my concert photography portfolio and resume.
 - SEO
 - bring in higher quality images
 - implement higher res modal images that load upon render
+- Add build badge
+- Contact form
+- Footer
+- Write tests

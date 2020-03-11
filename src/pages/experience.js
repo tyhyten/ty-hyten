@@ -1,12 +1,11 @@
 import React from "react"
-import Header from "../components/Header"
+import Layout from "../components/Layout"
 import "../styles/experience.scss"
 import Img from "gatsby-image"
 import { graphql, useStaticQuery } from "gatsby"
 import experienceJSON from "../data/content/experience.json"
 import { Box, Card, Flex } from "rebass"
 
-// TODO - perhaps have cards scroll up over whole header image
 // TODO - include social media links up top
 
 const Experience = ({ data }) => {
@@ -30,7 +29,7 @@ const Experience = ({ data }) => {
       allFile(
         filter: {
           extension: { regex: "/(png)/" }
-          relativeDirectory: { eq: "logos" }
+          relativeDirectory: { eq: "companyLogos" }
         }
       ) {
         edges {
@@ -47,7 +46,7 @@ const Experience = ({ data }) => {
     }
   `)
 
-  const logos = data.allFile.edges.reduce((acc, { node }) => {
+  const companyLogos = data.allFile.edges.reduce((acc, { node }) => {
     return {
       ...acc,
       [node.name]: {
@@ -57,7 +56,7 @@ const Experience = ({ data }) => {
   }, {})
 
   return (
-    <Header>
+    <Layout>
       <div>
         <div className="background-container">
           <Img
@@ -100,7 +99,7 @@ const Experience = ({ data }) => {
                     }}
                     my={[3, 0]}
                   >
-                    <Img fixed={logos[job.slug]} />
+                    <Img fixed={companyLogos[job.slug]} />
                   </Box>
                   <Box
                     width={[1, 4 / 5]}
@@ -119,7 +118,7 @@ const Experience = ({ data }) => {
           ))}
         </Box>
       </div>
-    </Header>
+    </Layout>
   )
 }
 
