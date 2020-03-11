@@ -134,6 +134,7 @@ const Layout = ({ children }) => {
             </div>
           </a>
         </div>
+        <p>© 2020 Ty Hyten</p>
       </div>
     </div>
   )
