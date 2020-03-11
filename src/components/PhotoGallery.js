@@ -16,7 +16,8 @@ const PhotoGallery = ({
         sum(rowAspectRatios)
       )
   )
-  // TODO - add SEO stuff
+
+  // TODO - add hover captions and SEO
 
   return (
     <div>
