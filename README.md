@@ -1,4 +1,3 @@
-<!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
   <a href="https://www.tyhyten.com">
     <img alt="ty hyten logo" src="https://www.tyhyten.com/static/623d26a9139bb2967d0f0662f4979033/e0491/tyhytenlogo.png" width="160" />
@@ -24,7 +23,6 @@ This is the repo for tyhyten.com, my concert photography portfolio and resume.
 - SEO
 - bring in higher quality images
 - implement higher res modal images that load upon render
-- Add build badge
 - Contact form
 - Footer
 - Write tests
