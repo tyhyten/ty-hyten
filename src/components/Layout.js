@@ -134,7 +134,7 @@ const Layout = ({ children }) => {
             </div>
           </a>
         </div>
-        <p>© 2020 Ty Hyten</p>
+        <p style={{ textAlign: "center" }}>© 2020 Ty Hyten</p>
       </div>
     </div>
   )
