@@ -8,6 +8,8 @@
   tyhyten.com
 </h1>
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/beac823f-474b-43f5-aef2-06bfecb15b05/deploy-status)](https://app.netlify.com/sites/blissful-bohr-959b76/deploys)
+
 This is the repo for tyhyten.com, my concert photography portfolio and resume.
 
 ## Start the app
