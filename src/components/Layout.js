@@ -86,7 +86,13 @@ const Layout = ({ children }) => {
         </div>
       </div>
       {children}
-      <div style={{ height: "200px", backgroundColor: "white" }}>
+      <div
+        style={{
+          height: "200px",
+          backgroundColor: "white",
+          paddingTop: "40px",
+        }}
+      >
         <div
           style={{
             display: "flex",
