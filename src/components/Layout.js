@@ -1,21 +1,38 @@
 import React from "react"
-import { Link, useStaticQuery, graphql } from "gatsby"
+import { Link, useStaticQuery, graphql, navigate } from "gatsby"
 import Img from "gatsby-image"
+import twitterSVG from "../data/assets/twitter-logo.svg"
 import "../styles/layout.scss"
 
 const isWindowPresent = typeof window !== `undefined`
 
+// TODO - DRY up query
+
 const Layout = ({ children }) => {
-  const logo = useStaticQuery(graphql`
+  const logos = useStaticQuery(graphql`
     query {
       site {
         siteMetadata {
           title
         }
       }
-      file(relativePath: { eq: "assets/ty-hyten-logo.png" }) {
+      tyhyten: file(relativePath: { eq: "assets/ty-hyten-logo.png" }) {
         childImageSharp {
           fixed(width: 90) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+      instagram: file(relativePath: { eq: "assets/instagram-logo.png" }) {
+        childImageSharp {
+          fixed(width: 30) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+      linkedin: file(relativePath: { eq: "assets/linkedin-logo.png" }) {
+        childImageSharp {
+          fixed(width: 30) {
             ...GatsbyImageSharpFixed
           }
         }
@@ -49,7 +66,7 @@ const Layout = ({ children }) => {
         <Link to="/">
           <Img
             fadeIn={false}
-            fixed={logo.file.childImageSharp.fixed}
+            fixed={logos.tyhyten.childImageSharp.fixed}
             loading="eager"
           />
         </Link>
@@ -69,7 +86,49 @@ const Layout = ({ children }) => {
         </div>
       </div>
       {children}
-      {/* <div style={{ height: "200px" }}>I'm the footer</div> */}
+      <div style={{ height: "200px", backgroundColor: "white" }}>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "center",
+          }}
+        >
+          <a
+            href="https://www.instagram.com/tyhyten"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Img
+              fadeIn={false}
+              fixed={logos.instagram.childImageSharp.fixed}
+              loading="eager"
+              style={{ marginRight: "4px" }}
+            />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/tyhyten"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Img
+              fadeIn={false}
+              fixed={logos.linkedin.childImageSharp.fixed}
+              loading="eager"
+              style={{ marginRight: "4px" }}
+            />
+          </a>
+          <a
+            href="https://www.twitter.com/tyhyten"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div style={{ width: "30px", display: "inline-block" }}>
+              <img src={twitterSVG} />
+            </div>
+          </a>
+        </div>
+      </div>
     </div>
   )
 }
