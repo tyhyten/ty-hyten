@@ -46,6 +46,8 @@ const Gallery = ({ data }) => {
     setImageIndex(imageIndex)
   }
 
+  const handleModalClose = () => setIsModalOpen(false)
+
   return (
     <>
       <Layout>
@@ -56,6 +58,7 @@ const Gallery = ({ data }) => {
         />
       </Layout>
       <ImageCarousel
+        onClose={handleModalClose}
         images={images}
         isOpen={isModalOpen}
         currentImage={imageIndex}

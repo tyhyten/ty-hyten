@@ -6,7 +6,7 @@ import Img from "gatsby-image"
 // TODO - darken background and lock scrolling when carousel is open
 // TODO - use separate widths on mobile
 
-const ImageCarousel = ({ images, isOpen, currentImage }) => {
+const ImageCarousel = ({ onClose, images, isOpen, currentImage }) => {
   if (isOpen) {
     return (
       <div
@@ -18,6 +18,20 @@ const ImageCarousel = ({ images, isOpen, currentImage }) => {
           transform: "translate(-50%, -50%)",
         }}
       >
+        <h4
+          style={{
+            left: "400px",
+            zIndex: 400,
+            position: "relative",
+            bottom: "266px",
+            color: "white",
+            fontWeight: 800,
+            cursor: "pointer",
+          }}
+          onClick={onClose}
+        >
+          X
+        </h4>
         <Img
           fluid={images[currentImage]}
           load="lazy"
