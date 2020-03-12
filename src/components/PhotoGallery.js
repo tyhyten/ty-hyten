@@ -17,7 +17,7 @@ const PhotoGallery = ({
       )
   )
 
-  // TODO - add hover captions and SEO
+  // TODO - add hover captions
 
   return (
     <div>
