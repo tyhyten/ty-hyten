@@ -4,6 +4,8 @@ import Img from "gatsby-image"
 import twitterSVG from "../data/assets/twitter-logo.svg"
 import "../styles/layout.scss"
 
+const imageStyle = { marginRight: "4px" }
+
 const isWindowPresent = typeof window !== `undefined`
 
 // TODO - DRY up query
@@ -61,7 +63,7 @@ const Layout = ({ children }) => {
   })
 
   return (
-    <div className="layout">
+    <div id="layout">
       <div id="navbar">
         <Link to="/">
           <Img
@@ -70,13 +72,7 @@ const Layout = ({ children }) => {
             loading="eager"
           />
         </Link>
-        <div
-          style={{
-            width: "300px",
-            justifyContent: "space-around",
-            display: "flex",
-          }}
-        >
+        <div className="navigation-links">
           <Link to="/gallery" style={getLinkStyle("/gallery")}>
             photography
           </Link>
@@ -86,20 +82,8 @@ const Layout = ({ children }) => {
         </div>
       </div>
       {children}
-      <div
-        style={{
-          height: "200px",
-          backgroundColor: "white",
-          paddingTop: "40px",
-        }}
-      >
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "row",
-            justifyContent: "center",
-          }}
-        >
+      <div className="footer">
+        <div className="social-icons">
           <a
             href="https://www.instagram.com/tyhyten"
             target="_blank"
@@ -109,7 +93,7 @@ const Layout = ({ children }) => {
               fadeIn={false}
               fixed={logos.instagram.childImageSharp.fixed}
               loading="eager"
-              style={{ marginRight: "4px" }}
+              style={imageStyle}
             />
           </a>
           <a
@@ -121,7 +105,7 @@ const Layout = ({ children }) => {
               fadeIn={false}
               fixed={logos.linkedin.childImageSharp.fixed}
               loading="eager"
-              style={{ marginRight: "4px" }}
+              style={imageStyle}
             />
           </a>
           <a
@@ -129,17 +113,15 @@ const Layout = ({ children }) => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <div style={{ width: "30px", display: "inline-block" }}>
+            <div className="twitter-icon">
               <img src={twitterSVG} />
             </div>
           </a>
         </div>
-        <p style={{ textAlign: "center" }}>© 2020 Ty Hyten</p>
+        <p>© 2020 Ty Hyten</p>
       </div>
     </div>
   )
 }
-
-// TODO - add propTypes to all components
 
 export default Layout

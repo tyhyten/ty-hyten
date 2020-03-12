@@ -1,4 +1,4 @@
-.layout {
+#layout {
   #navbar {
     margin-bottom: 4px;
     display: flex;
@@ -12,5 +12,32 @@
     z-index: 1;
     padding: 4px;
     transition: top 0.3s;
+  }
+
+  .navigation-links {
+    width: 300px;
+    justify-content: space-around;
+    display: flex;
+  }
+
+  .footer {
+    height: 200px;
+    background-color: white;
+    padding-top: 40px;
+  }
+
+  .social-icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    .twitter-icon {
+      width: 30px;
+      display: inline-block;
+    }
+  }
+
+  p {
+    text-align: center;
   }
 }
