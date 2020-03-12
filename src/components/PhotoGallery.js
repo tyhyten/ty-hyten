@@ -1,6 +1,6 @@
 import Img from "gatsby-image"
 import { chunk, sum } from "lodash" // TODO - remove lodash
-import React, { useState } from "react"
+import React from "react"
 import { Box } from "rebass"
 
 const PhotoGallery = ({
@@ -17,7 +17,7 @@ const PhotoGallery = ({
       )
   )
 
-  // TODO - add hover captions and SEO
+  // TODO - add hover captions
 
   return (
     <div>

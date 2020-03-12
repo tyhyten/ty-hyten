@@ -6,10 +6,15 @@ import { graphql, useStaticQuery } from "gatsby"
 import experienceJSON from "../data/content/experience.json"
 import { Box, Card, Flex } from "rebass"
 
-// TODO - include social media links up top
+const headShotImageStyle = {
+  borderRadius: "50%",
+  position: "absolute",
+  top: "126px",
+}
 
 const Experience = ({ data }) => {
-  // TODO - can I move this outside of component
+  // TODO - move this outside of component ?
+  // TODO - alias all pieces of query for readability
   useStaticQuery(graphql`
     query {
       headShot: file(relativePath: { eq: "assets/ty-hyten-square.jpg" }) {
@@ -57,17 +62,17 @@ const Experience = ({ data }) => {
 
   return (
     <Layout>
-      <div>
+      <div id="experience">
         <div className="background-container">
           <Img
             fluid={data.headerImage.childImageSharp.fluid}
             className="header-image"
           />
         </div>
-        <div style={{ display: "flex", justifyContent: "center" }}>
+        <div className="headshot-container">
           <Img
             fixed={data.headShot.childImageSharp.fixed}
-            style={{ borderRadius: "50%", position: "absolute", top: "126px" }}
+            style={headShotImageStyle}
           />
         </div>
         <Box mt={[4, 3]} className="experience-container">
