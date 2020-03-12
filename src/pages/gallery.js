@@ -15,7 +15,7 @@ export const query = graphql`
       edges {
         node {
           childImageSharp {
-            fluid(maxWidth: 1000, quality: 100) {
+            fluid(maxWidth: 1000, quality: 70) {
               aspectRatio
               ...GatsbyImageSharpFluid
             }
