@@ -1,0 +1,40 @@
+#image-carousel {
+  .modal-background {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.75);
+    cursor: pointer;
+  }
+
+  .close-icon-wrapper {
+    z-index: 400;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    h4 {
+      left: 400px;
+      z-index: 400;
+      position: relative;
+      bottom: 266px;
+      color: white;
+      font-weight: 800;
+      cursor: pointer;
+      font-size: xx-large;
+    }
+  }
+
+  .carousel-image {
+    height: 85vh;
+    width: 85vw;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
