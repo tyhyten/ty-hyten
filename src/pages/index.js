@@ -5,6 +5,8 @@ import { graphql, navigate, useStaticQuery } from "gatsby"
 import { Box, Flex } from "rebass"
 import "../styles/index.scss"
 
+// TODO - combine hoverable boxes into own components
+
 export default ({ data }) => {
   useStaticQuery(graphql`
     query {
@@ -36,28 +38,15 @@ export default ({ data }) => {
   // TODO - make the boxes into shared components since they're identical
   return (
     <Layout>
-      <Flex flexWrap="wrap" pt={[3, "5%"]}>
+      <Flex flexWrap="wrap" pt={[3, "5%"]} id="index">
         <Box
           width={[1, 1 / 2]}
           pb={4}
           onClick={handlePhotographyClick}
-          style={{ cursor: "pointer" }}
+          className="hoverable-box"
         >
-          <div style={{ textAlign: "center", position: "relative" }}>
-            <h1
-              style={{
-                pointerEvents: "none",
-                color: "white",
-                zIndex: "3",
-                position: "absolute",
-                top: "50%",
-                left: "50%",
-                transform: "translate(-50%, -50%)",
-                fontSize: "3vw",
-              }}
-            >
-              photography
-            </h1>
+          <div className="content-wrapper">
+            <h1 className="large-nav-label">photography</h1>
             <Img
               className="nav-image"
               fluid={data.photographyImage.childImageSharp.fluid}
@@ -67,23 +56,10 @@ export default ({ data }) => {
         <Box
           width={[1, 1 / 2]}
           onClick={handleDevelopmentClick}
-          style={{ cursor: "pointer" }}
+          className="hoverable-box"
         >
-          <div style={{ textAlign: "center", position: "relative" }}>
-            <h1
-              style={{
-                pointerEvents: "none",
-                color: "white",
-                zIndex: "1",
-                position: "absolute",
-                top: "50%",
-                left: "50%",
-                transform: "translate(-50%, -50%)",
-                fontSize: "3vw", // make this and other things a class in here to DRY this up
-              }}
-            >
-              development
-            </h1>
+          <div className="content-wrapper">
+            <h1 className="large-nav-label">development</h1>
             <Img
               className="nav-image"
               fluid={data.developmentImage.childImageSharp.fluid}

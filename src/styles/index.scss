@@ -1,10 +1,32 @@
-.nav-image {
-  border-radius: 50%;
-  max-width: 80%;
-  transition: max-width 0.5s ease;
-  margin: 0 auto;
-}
+#index {
+  .nav-image {
+    border-radius: 50%;
+    max-width: 80%;
+    transition: max-width 0.5s ease;
+    margin: 0 auto;
+  }
 
-.nav-image:hover {
-  max-width: 90%;
+  .hoverable-box {
+    cursor: pointer;
+  }
+
+  .nav-image:hover {
+    max-width: 90%;
+  }
+
+  .content-wrapper {
+    text-align: center;
+    position: relative;
+  }
+
+  .large-nav-label {
+    pointer-events: none;
+    color: white;
+    z-index: 3;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3vw;
+  }
 }
