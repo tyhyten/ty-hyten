@@ -1,5 +1,5 @@
 import React from "react"
-import { Link, useStaticQuery, graphql, navigate } from "gatsby"
+import { Link, useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import twitterSVG from "../data/assets/twitter-logo.svg"
 import "../styles/layout.scss"
@@ -118,7 +118,7 @@ const Layout = ({ children }) => {
             </div>
           </a>
         </div>
-        <p>© 2020 Ty Hyten</p>
+        <p className="copyright">© 2020 Ty Hyten</p>
       </div>
     </div>
   )

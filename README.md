@@ -20,6 +20,7 @@ This is the repo for tyhyten.com, my concert photography portfolio and resume.
 
 ## TODOs
 
+- Make more accessible
 - SEO
 - bring in higher quality images
 - add PropTypes

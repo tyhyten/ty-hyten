@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import Layout from "../components/Layout"
 import PhotoGallery from "../components/PhotoGallery"
-import { useStaticQuery, graphql } from "gatsby"
+import { graphql } from "gatsby"
 import ImageCarousel from "../components/ImageCarousel"
 
 export const query = graphql`
@@ -36,12 +36,12 @@ const getRandomizedImages = images =>
 const Gallery = ({ data }) => {
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [imageIndex, setImageIndex] = useState(0)
-  const [images, setImages] = useState(getRandomizedImages(data.allFile.edges)) // TODO - useEffect instead on this?
+  // TODO - use useEffect instead on this
+  const [images, setImages] = useState(getRandomizedImages(data.allFile.edges))
 
   const toggleModal = () => setIsModalOpen(!isModalOpen)
 
   const handleImageClick = imageIndex => {
-    console.log("image", imageIndex)
     toggleModal()
     setImageIndex(imageIndex)
   }
