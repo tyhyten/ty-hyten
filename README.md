@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://www.tyhyten.com">
-    <img alt="ty hyten logo" src="https://www.tyhyten.com/static/623d26a9139bb2967d0f0662f4979033/e0491/tyhytenlogo.png" width="160" />
+    <img alt="ty hyten logo" src="https://tyhyten.s3-us-west-1.amazonaws.com/ty-hyten-logo.png" width="160" />
   </a>
 </p>
 <h1 align="center">
