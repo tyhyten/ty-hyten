@@ -1,8 +1,11 @@
-import React, { useState } from "react"
+import React, { useContext, useEffect, useState } from "react"
 import Layout from "../components/Layout"
 import PhotoGallery from "../components/PhotoGallery"
 import { graphql } from "gatsby"
 import ImageCarousel from "../components/ImageCarousel"
+import { AppContext } from "../providers/AppProvider"
+
+const isWindowPresent = typeof window !== `undefined`
 
 export const query = graphql`
   query {
@@ -34,19 +37,32 @@ const getRandomizedImages = images =>
     }))
 
 const Gallery = ({ data }) => {
+  const { setIsNavOpen } = useContext(AppContext)
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [imageIndex, setImageIndex] = useState(0)
-  // TODO - use useEffect instead on this
-  const [images, setImages] = useState(getRandomizedImages(data.allFile.edges))
+  const [images, setImages] = useState([])
+
+  useEffect(() => {
+    setImages(getRandomizedImages(data.allFile.edges))
+  }, [data.allFile.edges])
 
   const toggleModal = () => setIsModalOpen(!isModalOpen)
 
   const handleImageClick = imageIndex => {
+    // TODO - create a hook that watches window size and provides if we're mobile
+    if (isWindowPresent && window.innerWidth <= 375) {
+      return
+    }
+
+    setIsNavOpen(false)
     toggleModal()
     setImageIndex(imageIndex)
   }
 
-  const handleModalClose = () => setIsModalOpen(false)
+  const handleModalClose = () => {
+    setIsModalOpen(false)
+    setIsNavOpen(true)
+  }
 
   return (
     <>

@@ -17,15 +17,21 @@
     top: 50%;
     transform: translate(-50%, -50%);
 
-    h4 {
-      left: 400px;
-      z-index: 400;
+    .close-x-wrapper {
       position: relative;
-      bottom: 266px;
-      color: white;
-      font-weight: 800;
-      cursor: pointer;
-      font-size: xx-large;
+      left: 0;
+      top: 0;
+      width: 100vw;
+      height: 100vh;
+      bottom: 151px;
+      left: 65px;
+      z-index: 900;
+      .close-x {
+        color: white;
+        font-weight: 800;
+        cursor: pointer;
+        font-size: xx-large;
+      }
     }
   }
 
