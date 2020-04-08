@@ -19,6 +19,7 @@ const carouselImageStyle = {
 
 const ImageCarousel = ({ onClose, images, isOpen, currentImage }) => {
   // const isPortrait = images[currentImage].aspectRatio < 1 // TODO - abstract this to a custom hook
+  // TODO - clean up classNames
 
   if (isOpen) {
     return (
@@ -30,7 +31,6 @@ const ImageCarousel = ({ onClose, images, isOpen, currentImage }) => {
               &times;
             </h4>
           </div>
-
           <Img
             fluid={images[currentImage]}
             load="lazy"

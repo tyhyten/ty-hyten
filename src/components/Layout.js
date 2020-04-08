@@ -7,9 +7,11 @@ import { AppContext } from "../providers/AppProvider"
 
 const imageStyle = { marginRight: "4px" }
 
-const isWindowPresent = typeof window !== `undefined`
+const isWindowPresent = typeof window !== `undefined` // TODO - make a hook or put on context
 
 // TODO - DRY up query
+
+// TODO - fix bug where scrolling blows up
 
 const Layout = ({ children }) => {
   const logos = useStaticQuery(graphql`

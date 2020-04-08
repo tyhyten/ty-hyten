@@ -5,6 +5,8 @@ import { graphql } from "gatsby"
 import ImageCarousel from "../components/ImageCarousel"
 import { AppContext } from "../providers/AppProvider"
 
+const isWindowPresent = typeof window !== `undefined`
+
 export const query = graphql`
   query {
     allFile(
@@ -47,6 +49,11 @@ const Gallery = ({ data }) => {
   const toggleModal = () => setIsModalOpen(!isModalOpen)
 
   const handleImageClick = imageIndex => {
+    // TODO - create a hook that watches window size and provides if we're mobile
+    if (isWindowPresent && window.innerWidth <= 375) {
+      return
+    }
+
     setIsNavOpen(false)
     toggleModal()
     setImageIndex(imageIndex)
