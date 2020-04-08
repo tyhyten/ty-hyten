@@ -1,8 +1,9 @@
-import React from "react"
+import React, { useEffect, useContext } from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import twitterSVG from "../data/assets/twitter-logo.svg"
 import "../styles/layout.scss"
+import { AppContext } from "../providers/AppProvider"
 
 const imageStyle = { marginRight: "4px" }
 
@@ -42,45 +43,54 @@ const Layout = ({ children }) => {
     }
   `)
 
-  if (isWindowPresent) {
-    let previousScrollPosition = window.pageYOffset
+  const { isNavOpen } = useContext(AppContext)
 
-    window.onscroll = () => {
-      const scrollPosition = window.pageYOffset
+  useEffect(() => {
+    if (isWindowPresent) {
+      let previousScrollPosition = window.pageYOffset
 
-      if (previousScrollPosition > scrollPosition) {
-        document.getElementById("navbar").style.top = "0"
-      } else {
-        document.getElementById("navbar").style.top = "-80px"
+      window.onscroll = () => {
+        if (isNavOpen) {
+          const scrollPosition = window.pageYOffset
+
+          if (previousScrollPosition > scrollPosition) {
+            document.getElementById("navbar").style.top = "0"
+          } else {
+            document.getElementById("navbar").style.top = "-80px"
+          }
+          previousScrollPosition = scrollPosition
+        }
       }
-      previousScrollPosition = scrollPosition
     }
-  }
+  }, [isNavOpen])
 
   const getLinkStyle = path => ({
     ...(isWindowPresent &&
       window.location.pathname === path && { color: "#802bb1" }),
   })
 
+
   return (
     <div id="layout">
-      <div id="navbar">
-        <Link to="/">
-          <Img
-            fadeIn={false}
-            fixed={logos.tyhyten.childImageSharp.fixed}
-            loading="eager"
-          />
-        </Link>
-        <div className="navigation-links">
-          <Link to="/gallery" style={getLinkStyle("/gallery")}>
-            photography
+      {isNavOpen && (
+        <div id="navbar">
+          <Link to="/">
+            <Img
+              fadeIn={false}
+              fixed={logos.tyhyten.childImageSharp.fixed}
+              loading="eager"
+            />
           </Link>
-          <Link to="/experience" style={getLinkStyle("/experience")}>
-            development
-          </Link>
+          <div className="navigation-links">
+            <Link to="/gallery" style={getLinkStyle("/gallery")}>
+              photography
+            </Link>
+            <Link to="/experience" style={getLinkStyle("/experience")}>
+              development
+            </Link>
+          </div>
         </div>
-      </div>
+      )}
       {children}
       <div className="footer">
         <div className="social-icons">
