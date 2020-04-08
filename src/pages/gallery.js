@@ -42,7 +42,7 @@ const Gallery = ({ data }) => {
 
   useEffect(() => {
     setImages(getRandomizedImages(data.allFile.edges))
-  }, [])
+  }, [data.allFile.edges])
 
   const toggleModal = () => setIsModalOpen(!isModalOpen)
 

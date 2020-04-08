@@ -69,7 +69,6 @@ const Layout = ({ children }) => {
       window.location.pathname === path && { color: "#802bb1" }),
   })
 
-
   return (
     <div id="layout">
       {isNavOpen && (
@@ -124,7 +123,7 @@ const Layout = ({ children }) => {
             rel="noopener noreferrer"
           >
             <div className="twitter-icon">
-              <img src={twitterSVG} />
+              <img src={twitterSVG} alt="twitter-logo" />
             </div>
           </a>
         </div>
