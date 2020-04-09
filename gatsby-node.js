@@ -3,6 +3,8 @@ var imageDescriptions = require("./src/data/image-descriptions")
 
 const GALLERY_IMAGES_PATH = "./src/data/images/"
 
+// TODO - add step to run Prettier on resulting file to prevent diffs
+
 const addNewImageDescriptions = () => {
   const newImageDescriptions = fs
     .readdirSync(GALLERY_IMAGES_PATH)
