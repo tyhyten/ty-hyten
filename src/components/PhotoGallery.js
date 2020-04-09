@@ -21,9 +21,7 @@ const PhotoGallery = ({
         sum(rowAspectRatios)
       )
   )
-  // TODO - add hover captions
   // TODO - add ability to click on an image in mobile, lower opacity and show band name
-
   return (
     <div>
       {images.map((image, i) => (
@@ -38,7 +36,10 @@ const PhotoGallery = ({
             }
           )}
           css={{ display: "inline-block" }}
-          onClick={() => onImageClick(i)}
+          onClick={() => {
+            setHoverIndex(i)
+            onImageClick(i)
+          }}
           style={{
             cursor: "pointer",
             position: "relative",
