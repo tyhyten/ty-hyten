@@ -17,6 +17,8 @@ export const query = graphql`
     ) {
       edges {
         node {
+          name
+          ext
           childImageSharp {
             fluid(maxWidth: 1000, quality: 70) {
               aspectRatio
@@ -32,7 +34,9 @@ export const query = graphql`
 const getRandomizedImages = images =>
   images
     .sort(() => 0.5 - Math.random())
-    .map(({ node }) => ({
+    .map(({ node, node: { name, ext } }) => ({
+      ext,
+      name,
       ...node.childImageSharp.fluid,
     }))
 

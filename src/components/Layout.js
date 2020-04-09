@@ -83,10 +83,10 @@ const Layout = ({ children }) => {
             />
           </Link>
           <div className="navigation-links">
-            <Link to="/gallery" style={getLinkStyle("/gallery")}>
+            <Link to="/gallery/" style={getLinkStyle("/gallery/")}>
               photography
             </Link>
-            <Link to="/experience" style={getLinkStyle("/experience")}>
+            <Link to="/experience/" style={getLinkStyle("/experience/")}>
               development
             </Link>
           </div>
