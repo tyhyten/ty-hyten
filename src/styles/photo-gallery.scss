@@ -2,3 +2,10 @@
   opacity: 0.4;
   transition: opacity 0.18s ease-in;
 }
+
+.image-title {
+  @media (min-width: 376px) {
+    // TODO - do this with variables
+    pointer-events: none;
+  }
+}
