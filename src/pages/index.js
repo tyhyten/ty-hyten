@@ -31,9 +31,9 @@ export default ({ data }) => {
     }
   `)
 
-  const handleDevelopmentClick = () => navigate("/experience")
+  const handleDevelopmentClick = () => navigate("/experience/")
 
-  const handlePhotographyClick = () => navigate("/gallery")
+  const handlePhotographyClick = () => navigate("/gallery/")
 
   // TODO - make the boxes into shared components since they're identical
   return (
