@@ -1,6 +1,6 @@
 import Img from "gatsby-image"
 import { chunk, sum } from "lodash" // TODO - remove lodash
-import React, { useState } from "react"
+import React, { useRef, useState } from "react"
 import { Box } from "rebass"
 import imageDescriptions from "@data/image-descriptions"
 import "@styles/photo-gallery.scss"
@@ -11,7 +11,7 @@ const PhotoGallery = ({
   images,
   itemsPerRow: itemsPerRowByBreakpoints,
 }) => {
-  const [hoverIndex, setHoverIndex] = useState(null);
+  const [hoverIndex, setHoverIndex] = useState(null)
 
   const aspectRatios = images.map(image => image.aspectRatio)
 
@@ -21,7 +21,23 @@ const PhotoGallery = ({
         sum(rowAspectRatios)
       )
   )
-  // TODO - add ability to click on an image in mobile, lower opacity and show band name
+
+  const ref = useRef() // TODO - rename and make function below more readable
+
+  const toggleMobileClick = clickedIndex => {
+    if (hoverIndex === clickedIndex && ref.current === clickedIndex) {
+      setHoverIndex(null)
+      return
+    }
+
+    ref.current = clickedIndex
+
+    setHoverIndex(clickedIndex)
+  }
+
+  // TODO - move inline styles out to stylesheet
+  // TODO - don't call both functions inside of onClick
+
   return (
     <div>
       {images.map((image, i) => (
@@ -37,7 +53,7 @@ const PhotoGallery = ({
           )}
           css={{ display: "inline-block" }}
           onClick={() => {
-            setHoverIndex(i)
+            toggleMobileClick(i)
             onImageClick(i)
           }}
           style={{
@@ -47,8 +63,9 @@ const PhotoGallery = ({
           onMouseEnter={() => setHoverIndex(i)}
           onMouseLeave={() => setHoverIndex(null)}
         >
-          {hoverIndex === i &&
+          {hoverIndex === i && (
             <h3
+              className="image-title"
               style={{
                 textAlign: "center",
                 position: "absolute",
@@ -61,9 +78,9 @@ const PhotoGallery = ({
             >
               {imageDescriptions[`${image.name}${image.ext}`].title}
             </h3>
-          }
+          )}
           <Img
-            className="image"
+            className={`${hoverIndex === i ? 'image' : ''}`} // TODO - do this better
             alt={imageDescriptions[
               `${image.name}${image.ext}`
             ].title.toLowerCase()}
