@@ -12,5 +12,16 @@ module.exports = {
         path: `${__dirname}/src/data/`,
       },
     },
+    {
+      resolve: "gatsby-plugin-module-resolver",
+      options: {
+        root: "./src",
+        aliases: {
+          "@components": "./components",
+          "@hooks": "./components/hooks",
+          "@providers": "./providers",
+        },
+      },
+    },
   ],
 }
