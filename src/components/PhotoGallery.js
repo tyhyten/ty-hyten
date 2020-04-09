@@ -3,7 +3,7 @@ import { chunk, sum } from "lodash" // TODO - remove lodash
 import React from "react"
 import { Box } from "rebass"
 import imageDescriptions from "@data/image-descriptions"
-import "@styles/photo-gallery.scss"
+// TODO - swap out all paths with new relative paths
 
 const PhotoGallery = ({
   onImageClick,
@@ -19,6 +19,8 @@ const PhotoGallery = ({
       )
   )
   // TODO - add hover captions
+  // TODO - add ability to click on an image in mobile, lower opacity and show band name
+
   return (
     <div>
       {images.map((image, i) => (
