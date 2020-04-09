@@ -20,6 +20,11 @@ module.exports = {
           "@components": "./components",
           "@hooks": "./components/hooks",
           "@providers": "./providers",
+          "@data": "./data",
+          static: {
+            root: "./public",
+            alias: "./static",
+          },
         },
       },
     },
