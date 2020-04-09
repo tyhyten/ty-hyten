@@ -21,6 +21,7 @@ module.exports = {
           "@hooks": "./components/hooks",
           "@providers": "./providers",
           "@data": "./data",
+          "@styles": "./styles",
           static: {
             root: "./public",
             alias: "./static",

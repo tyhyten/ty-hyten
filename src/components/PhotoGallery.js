@@ -3,6 +3,7 @@ import { chunk, sum } from "lodash" // TODO - remove lodash
 import React from "react"
 import { Box } from "rebass"
 import imageDescriptions from "@data/image-descriptions"
+import "@styles/photo-gallery.scss"
 
 const PhotoGallery = ({
   onImageClick,
@@ -34,9 +35,16 @@ const PhotoGallery = ({
           css={{ display: "inline-block" }}
           onClick={() => onImageClick(i)}
           style={{ cursor: "pointer" }}
+          sx={{
+            ":hover": {
+              opacity: 0.4,
+            },
+          }}
         >
           <Img
-            alt={imageDescriptions[`${image.name}${image.ext}`].title}
+            alt={imageDescriptions[
+              `${image.name}${image.ext}`
+            ].title.toLowerCase()}
             fluid={image}
             loading="lazy"
             imgStyle={{ padding: "0px 4px" }}
