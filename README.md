@@ -22,7 +22,7 @@ This is the repo for tyhyten.com, my concert photography portfolio and resume.
 
 - Make more accessible
 - SEO
-- bring in higher quality images
-- add PropTypes
-- Contact form
+- Bring in higher quality images
+- Add PropTypes
+- Contact page/modal - maybe use React portals
 - Write tests
