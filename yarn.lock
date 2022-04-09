@@ -5589,6 +5589,11 @@ gatsby-page-utils@^0.0.37:
     lodash "^4.17.15"
     micromatch "^3.1.10"
 
+gatsby-plugin-module-resolver@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-module-resolver/-/gatsby-plugin-module-resolver-1.0.3.tgz#d98d0b51b5b99aa40db3382f6b5c049ca3018f01"
+  integrity sha512-MrE2JhDEiiZB6uLVJ0zpoZmHi36zkgGoNgBr9YQ4r6TUqayiNXU97NBhO87CRJQz8I4MaL6ZrOWjUdoHEXvndg==
+
 gatsby-plugin-page-creator@^2.1.38:
   version "2.1.38"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-page-creator/-/gatsby-plugin-page-creator-2.1.38.tgz#2c78d4baae296b0b3396cad689787a65c0a50585"
@@ -8194,9 +8199,9 @@ mkdirp@^1.0.3:
   integrity sha512-vVqVZQyf3WLx2Shd0qJ9xuvqgAyKPLAiqITEtqW0oIUjzo3PePDd6fW9iFz30ef7Ysp/oiWqbhszeGWW2T6Gzw==
 
 moment@^2.24.0:
-  version "2.24.0"
-  resolved "https://registry.yarnpkg.com/moment/-/moment-2.24.0.tgz#0d055d53f5052aa653c9f6eb68bb5d12bf5c2b5b"
-  integrity sha512-bV7f+6l2QigeBBZSM/6yTNq4P2fNpSWj/0e7jQcy87A8e7o2nAfP/34/2ky5Vw4B9S446EtIhodAzkFCcR4dQg==
+  version "2.29.2"
+  resolved "https://registry.yarnpkg.com/moment/-/moment-2.29.2.tgz#00910c60b20843bcba52d37d58c628b47b1f20e4"
+  integrity sha512-UgzG4rvxYpN15jgCmVJwac49h9ly9NurikMWGPdVxm8GZD6XjkKPxDTjQQ43gtGgnV3X0cAyWDdP2Wexoquifg==
 
 move-concurrently@^1.0.1:
   version "1.0.1"
