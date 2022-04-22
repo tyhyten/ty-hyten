@@ -1,5 +1,5 @@
 import React from "react"
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image";
 import "../styles/image-carousel.scss"
 
 // TODO - add ability to swipe through the images
@@ -31,15 +31,14 @@ const ImageCarousel = ({ onClose, images, isOpen, currentImage }) => {
               &times;
             </h4>
           </div>
-          <Img
-            fluid={images[currentImage]}
+          <GatsbyImage
+            image={images[currentImage]}
             load="lazy"
             imgStyle={{ objectFit: "contain" }}
-            style={carouselImageStyle}
-          />
+            style={carouselImageStyle} />
         </div>
       </div>
-    )
+    );
   }
   return null
 }

@@ -1,4 +1,4 @@
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image";
 import { chunk, sum } from "lodash" // TODO - remove lodash
 import React, { useRef, useState } from "react"
 import { Box } from "rebass"
@@ -79,19 +79,19 @@ const PhotoGallery = ({
               {imageDescriptions[`${image.name}${image.ext}`].title}
             </h3>
           )}
-          <Img
-            className={`${hoverIndex === i ? 'image' : ''}`} // TODO - do this better
+          <GatsbyImage
+            image={image}
+            // TODO - do this better
+            className={`${hoverIndex === i ? 'image' : ''}`}
             alt={imageDescriptions[
               `${image.name}${image.ext}`
             ].title.toLowerCase()}
-            fluid={image}
             loading="lazy"
-            imgStyle={{ padding: "0px 4px" }}
-          />
+            imgStyle={{ padding: "0px 4px" }} />
         </Box>
       ))}
     </div>
-  )
+  );
 }
 
 export default PhotoGallery

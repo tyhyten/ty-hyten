@@ -1,6 +1,6 @@
 import React, { useEffect, useContext } from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image";
 import twitterSVG from "../data/assets/twitter-logo.svg"
 import "../styles/layout.scss"
 import { AppContext } from "../providers/AppProvider"
@@ -14,36 +14,29 @@ const isWindowPresent = typeof window !== `undefined` // TODO - make a hook or p
 // TODO - fix bug where scrolling blows up
 
 const Layout = ({ children }) => {
-  const logos = useStaticQuery(graphql`
-    query {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-      tyhyten: file(relativePath: { eq: "assets/ty-hyten-logo.png" }) {
-        childImageSharp {
-          fixed(width: 90) {
-            ...GatsbyImageSharpFixed
-          }
-        }
-      }
-      instagram: file(relativePath: { eq: "assets/instagram-logo.png" }) {
-        childImageSharp {
-          fixed(width: 30) {
-            ...GatsbyImageSharpFixed
-          }
-        }
-      }
-      linkedin: file(relativePath: { eq: "assets/linkedin-logo.png" }) {
-        childImageSharp {
-          fixed(width: 30) {
-            ...GatsbyImageSharpFixed
-          }
-        }
-      }
+  const logos = useStaticQuery(graphql`{
+  site {
+    siteMetadata {
+      title
     }
-  `)
+  }
+  tyhyten: file(relativePath: {eq: "assets/ty-hyten-logo.png"}) {
+    childImageSharp {
+      gatsbyImageData(width: 90, layout: FIXED)
+    }
+  }
+  instagram: file(relativePath: {eq: "assets/instagram-logo.png"}) {
+    childImageSharp {
+      gatsbyImageData(width: 30, layout: FIXED)
+    }
+  }
+  linkedin: file(relativePath: {eq: "assets/linkedin-logo.png"}) {
+    childImageSharp {
+      gatsbyImageData(width: 30, layout: FIXED)
+    }
+  }
+}
+`)
 
   const { isNavOpen } = useContext(AppContext)
 
@@ -76,11 +69,10 @@ const Layout = ({ children }) => {
       {isNavOpen && (
         <div id="navbar">
           <Link to="/">
-            <Img
+            <GatsbyImage
+              image={logos.tyhyten.childImageSharp.gatsbyImageData}
               fadeIn={false}
-              fixed={logos.tyhyten.childImageSharp.fixed}
-              loading="eager"
-            />
+              loading="eager" />
           </Link>
           <div className="navigation-links">
             <Link to="/gallery/" style={getLinkStyle("/gallery/")}>
@@ -100,24 +92,22 @@ const Layout = ({ children }) => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Img
+            <GatsbyImage
+              image={logos.instagram.childImageSharp.gatsbyImageData}
               fadeIn={false}
-              fixed={logos.instagram.childImageSharp.fixed}
               loading="eager"
-              style={imageStyle}
-            />
+              style={imageStyle} />
           </a>
           <a
             href="https://www.linkedin.com/in/tyhyten"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Img
+            <GatsbyImage
+              image={logos.linkedin.childImageSharp.gatsbyImageData}
               fadeIn={false}
-              fixed={logos.linkedin.childImageSharp.fixed}
               loading="eager"
-              style={imageStyle}
-            />
+              style={imageStyle} />
           </a>
           <a
             href="https://www.twitter.com/tyhyten"
@@ -132,7 +122,7 @@ const Layout = ({ children }) => {
         <p className="copyright">© 2020 Ty Hyten</p>
       </div>
     </div>
-  )
+  );
 }
 
 export default Layout
