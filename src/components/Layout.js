@@ -123,7 +123,7 @@ const Layout = ({ children }) => {
             </div>
           </a>
         </div>
-        <p className="copyright">© 2020 Ty Hyten</p>
+        <p className="copyright">© 2022 Ty Hyten</p>
       </div>
     </div>
   )
