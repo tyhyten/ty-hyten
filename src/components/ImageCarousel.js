@@ -20,6 +20,7 @@ const carouselImageStyle = {
 const ImageCarousel = ({ onClose, images, isOpen, currentImage }) => {
   // const isPortrait = images[currentImage].aspectRatio < 1 // TODO - abstract this to a custom hook
   // TODO - clean up classNames
+  // TODO - disable scroll while this is open
 
   if (isOpen) {
     return (

@@ -65,7 +65,7 @@ const PhotoGallery = ({
               cursor: "pointer",
               position: "relative",
             }}
-            onMouseEnter={() => setHoverIndex(i)}
+            onMouseOver={() => setHoverIndex(i)}
             onMouseLeave={() => setHoverIndex(null)}
           >
             {hoverIndex === i && (
