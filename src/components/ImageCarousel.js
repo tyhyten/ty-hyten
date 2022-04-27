@@ -21,6 +21,8 @@ const ImageCarousel = ({ onClose, images, isOpen, currentImage }) => {
   // const isPortrait = images[currentImage].aspectRatio < 1 // TODO - abstract this to a custom hook
   // TODO - clean up classNames
   // TODO - disable scroll while this is open
+  // TODO - allow click out to close on desktop
+  // TODO - show image title on background or image
 
   if (isOpen) {
     return (

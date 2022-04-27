@@ -66,7 +66,7 @@ const PhotoGallery = ({
               position: "relative",
             }}
             onMouseOver={() => setHoverIndex(i)}
-            onMouseLeave={() => setHoverIndex(null)}
+            onMouseOut={() => setHoverIndex(null)}
           >
             {hoverIndex === i && (
               <h3
@@ -77,7 +77,7 @@ const PhotoGallery = ({
                   top: "50%",
                   right: "50%",
                   transform: "translate(50%, -50%)",
-                  zIndex: 900,
+                  zIndex: 400,
                   textTransform: "uppercase",
                 }}
               >
