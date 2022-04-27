@@ -1,6 +1,6 @@
 import React, { useEffect, useContext } from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 import twitterSVG from "../data/assets/twitter-logo.svg"
 import "../styles/layout.scss"
 import { AppContext } from "../providers/AppProvider"
@@ -15,7 +15,7 @@ const isWindowPresent = typeof window !== `undefined` // TODO - make a hook or p
 
 const Layout = ({ children }) => {
   const logos = useStaticQuery(graphql`
-    query {
+    {
       site {
         siteMetadata {
           title
@@ -23,23 +23,17 @@ const Layout = ({ children }) => {
       }
       tyhyten: file(relativePath: { eq: "assets/ty-hyten-logo.png" }) {
         childImageSharp {
-          fixed(width: 90) {
-            ...GatsbyImageSharpFixed
-          }
+          gatsbyImageData(width: 90, layout: FIXED)
         }
       }
       instagram: file(relativePath: { eq: "assets/instagram-logo.png" }) {
         childImageSharp {
-          fixed(width: 30) {
-            ...GatsbyImageSharpFixed
-          }
+          gatsbyImageData(width: 30, layout: FIXED)
         }
       }
       linkedin: file(relativePath: { eq: "assets/linkedin-logo.png" }) {
         childImageSharp {
-          fixed(width: 30) {
-            ...GatsbyImageSharpFixed
-          }
+          gatsbyImageData(width: 30, layout: FIXED)
         }
       }
     }
@@ -76,9 +70,9 @@ const Layout = ({ children }) => {
       {isNavOpen && (
         <div id="navbar">
           <Link to="/">
-            <Img
+            <GatsbyImage
+              image={logos.tyhyten.childImageSharp.gatsbyImageData}
               fadeIn={false}
-              fixed={logos.tyhyten.childImageSharp.fixed}
               loading="eager"
             />
           </Link>
@@ -100,9 +94,9 @@ const Layout = ({ children }) => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Img
+            <GatsbyImage
+              image={logos.instagram.childImageSharp.gatsbyImageData}
               fadeIn={false}
-              fixed={logos.instagram.childImageSharp.fixed}
               loading="eager"
               style={imageStyle}
             />
@@ -112,9 +106,9 @@ const Layout = ({ children }) => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Img
+            <GatsbyImage
+              image={logos.linkedin.childImageSharp.gatsbyImageData}
               fadeIn={false}
-              fixed={logos.linkedin.childImageSharp.fixed}
               loading="eager"
               style={imageStyle}
             />
@@ -129,7 +123,7 @@ const Layout = ({ children }) => {
             </div>
           </a>
         </div>
-        <p className="copyright">© 2020 Ty Hyten</p>
+        <p className="copyright">© 2022 Ty Hyten</p>
       </div>
     </div>
   )

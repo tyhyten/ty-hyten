@@ -8,7 +8,7 @@ import { AppContext } from "../providers/AppProvider"
 const isWindowPresent = typeof window !== `undefined`
 
 export const query = graphql`
-  query {
+  {
     allFile(
       filter: {
         extension: { regex: "/(jpg)/" }
@@ -20,10 +20,11 @@ export const query = graphql`
           name
           ext
           childImageSharp {
-            fluid(maxWidth: 1000, quality: 70) {
-              aspectRatio
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(
+              quality: 70
+              placeholder: BLURRED
+              layout: FULL_WIDTH
+            )
           }
         }
       }
@@ -37,7 +38,9 @@ const getRandomizedImages = images =>
     .map(({ node, node: { name, ext } }) => ({
       ext,
       name,
-      ...node.childImageSharp.fluid,
+      imageData: {
+        ...node.childImageSharp.gatsbyImageData,
+      },
     }))
 
 const Gallery = ({ data }) => {

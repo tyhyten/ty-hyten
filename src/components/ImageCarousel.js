@@ -1,5 +1,5 @@
 import React from "react"
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 import "../styles/image-carousel.scss"
 
 // TODO - add ability to swipe through the images
@@ -20,6 +20,7 @@ const carouselImageStyle = {
 const ImageCarousel = ({ onClose, images, isOpen, currentImage }) => {
   // const isPortrait = images[currentImage].aspectRatio < 1 // TODO - abstract this to a custom hook
   // TODO - clean up classNames
+  // TODO - disable scroll while this is open
 
   if (isOpen) {
     return (
@@ -31,9 +32,8 @@ const ImageCarousel = ({ onClose, images, isOpen, currentImage }) => {
               &times;
             </h4>
           </div>
-          <Img
-            fluid={images[currentImage]}
-            load="lazy"
+          <GatsbyImage
+            image={images[currentImage].imageData}
             imgStyle={{ objectFit: "contain" }}
             style={carouselImageStyle}
           />

@@ -1,10 +1,10 @@
 import React from "react"
 import Layout from "../components/Layout"
 import "../styles/experience.scss"
-import Img from "gatsby-image"
 import { graphql, useStaticQuery } from "gatsby"
 import experienceJSON from "../data/content/experience.json"
 import { Box, Card, Flex } from "rebass"
+import { StaticImage, getImage, GatsbyImage } from "gatsby-plugin-image"
 
 const headShotImageStyle = {
   borderRadius: "50%",
@@ -12,28 +12,13 @@ const headShotImageStyle = {
   top: "126px",
 }
 
-const Experience = ({ data }) => {
+const Experience = () => {
   // TODO - move this outside of component ?
-  // TODO - alias all pieces of query for readability
-  useStaticQuery(graphql`
-    query {
-      headShot: file(relativePath: { eq: "assets/ty-hyten-square.jpg" }) {
-        childImageSharp {
-          fixed(width: 200) {
-            ...GatsbyImageSharpFixed
-          }
-        }
-      }
-      headerImage: file(relativePath: { eq: "images/1-TYH_8865.jpg" }) {
-        childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
+  const data = useStaticQuery(graphql`
+    {
       allFile(
         filter: {
-          extension: { regex: "/(png)/" }
+          extension: { regex: "/(png|jpeg)/" }
           relativeDirectory: { eq: "companyLogos" }
         }
       ) {
@@ -41,9 +26,7 @@ const Experience = ({ data }) => {
           node {
             name
             childImageSharp {
-              fixed(width: 100) {
-                ...GatsbyImageSharpFixed
-              }
+              gatsbyImageData(width: 100, layout: FIXED)
             }
           }
         }
@@ -55,7 +38,7 @@ const Experience = ({ data }) => {
     return {
       ...acc,
       [node.name]: {
-        ...node.childImageSharp.fixed,
+        ...node.childImageSharp.gatsbyImageData,
       },
     }
   }, {})
@@ -64,63 +47,79 @@ const Experience = ({ data }) => {
     <Layout>
       <div id="experience">
         <div className="background-container">
-          <Img
-            fluid={data.headerImage.childImageSharp.fluid}
+          <StaticImage
+            src="../data/images/1-TYH_8865.jpg"
+            alt="red rocks amphitheater"
+            placeholder="blurred"
+            layout="fullWidth"
             className="header-image"
           />
         </div>
         <div className="headshot-container">
-          <Img
-            fixed={data.headShot.childImageSharp.fixed}
+          <StaticImage
+            src="../data/assets/ty-hyten-square.jpg"
+            layout="fixed"
+            width={200}
+            placeholder="blurred"
             style={headShotImageStyle}
+            alt="ty hyten headshot"
           />
         </div>
-        <Box mt={[4, 3]} className="experience-container">
-          {experienceJSON.map(job => (
-            <Box
-              key={job.slug}
-              sx={{
-                maxWidth: 900,
-                mx: "auto",
-                px: [1, 3],
-              }}
-            >
-              <Card
+        <Box mt={[4, 4]} className="experience-container">
+          {experienceJSON.map(job => {
+            const jobImage = getImage(companyLogos[job.slug])
+
+            return (
+              <Box
+                key={job.slug}
                 sx={{
-                  p: [3, 4],
-                  mx: [0, 4],
-                  mb: [3, 4],
-                  boxShadow: "0 0 4px rgba(0, 0, 0, .25)",
-                  borderRadius: 15,
+                  maxWidth: 900,
+                  mx: "auto",
+                  px: [1, 3],
                 }}
               >
-                <Flex flexWrap="wrap">
-                  <Box
-                    width={[1, 1 / 5]}
-                    sx={{
-                      display: "flex",
-                      flexDirection: ["row", "column"],
-                      justifyContent: "center",
-                    }}
-                    my={[3, 0]}
-                  >
-                    <Img fixed={companyLogos[job.slug]} />
-                  </Box>
-                  <Box
-                    width={[1, 4 / 5]}
-                    sx={{ textAlign: ["center", "left"] }}
-                  >
-                    <h2>{job.company}</h2>
-                    <h3>{job.role}</h3>
-                    <h4>
-                      {job.time.startDate} - {job.time.endDate}
-                    </h4>
-                    <p>{job.description}</p>
-                  </Box>
-                </Flex>
-              </Card>
-            </Box>
-          ))}
+                <Card
+                  sx={{
+                    p: [3, 4],
+                    mx: [0, 4],
+                    mb: [3, 4],
+                    boxShadow: "0 0 4px rgba(0, 0, 0, .25)",
+                    borderRadius: 15,
+                  }}
+                >
+                  <Flex flexWrap="wrap">
+                    <Box
+                      width={[1, 1 / 5]}
+                      sx={{
+                        display: "flex",
+                        flexDirection: ["row", "column"],
+                        justifyContent: "center",
+                      }}
+                      my={[3, 0]}
+                    >
+                      <GatsbyImage
+                        image={jobImage}
+                        alt={`${job.company} logo`}
+                        layout="fixed"
+                        width={100}
+                      />
+                    </Box>
+                    <Box
+                      width={[1, 4 / 5]}
+                      sx={{ textAlign: ["center", "left"] }}
+                    >
+                      <h2>{job.company}</h2>
+                      <h3>{job.role}</h3>
+                      <h4>
+                        {job.time.startDate} - {job.time.endDate}
+                      </h4>
+                      <p>{job.description}</p>
+                    </Box>
+                  </Flex>
+                </Card>
+              </Box>
+            )
+          })}
         </Box>
       </div>
     </Layout>

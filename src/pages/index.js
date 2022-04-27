@@ -1,36 +1,13 @@
 import React from "react"
 import Layout from "../components/Layout"
-import Img from "gatsby-image"
-import { graphql, navigate, useStaticQuery } from "gatsby"
+import { StaticImage } from "gatsby-plugin-image"
+import { navigate } from "gatsby"
 import { Box, Flex } from "rebass"
 import "../styles/index.scss"
 
 // TODO - combine hoverable boxes into own components
 
-export default ({ data }) => {
-  useStaticQuery(graphql`
-    query {
-      photographyImage: file(
-        relativePath: { eq: "assets/photography-image.jpg" }
-      ) {
-        childImageSharp {
-          fluid(quality: 80, maxWidth: 400) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-      developmentImage: file(
-        relativePath: { eq: "assets/development-image.jpg" }
-      ) {
-        childImageSharp {
-          fluid(quality: 80, maxWidth: 400) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-    }
-  `)
-
+const Homepage = () => {
   const handleDevelopmentClick = () => navigate("/experience/")
 
   const handlePhotographyClick = () => navigate("/gallery/")
@@ -47,9 +24,12 @@ export default ({ data }) => {
         >
           <div className="content-wrapper">
             <h1 className="large-nav-label">photography</h1>
-            <Img
+            <StaticImage
+              src="../data/assets/photography-image.jpg"
               className="nav-image"
-              fluid={data.photographyImage.childImageSharp.fluid}
+              width={400}
+              layout="constrained"
+              quality={80}
             />
           </div>
         </Box>
@@ -60,9 +40,12 @@ export default ({ data }) => {
         >
           <div className="content-wrapper">
             <h1 className="large-nav-label">development</h1>
-            <Img
+            <StaticImage
+              src="../data/assets/development-image.jpg"
               className="nav-image"
-              fluid={data.developmentImage.childImageSharp.fluid}
+              width={400}
+              layout="constrained"
+              quality={80}
             />
           </div>
         </Box>
@@ -70,3 +53,5 @@ export default ({ data }) => {
     </Layout>
   )
 }
+
+export default Homepage
