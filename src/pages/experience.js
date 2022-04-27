@@ -42,7 +42,7 @@ const Experience = () => {
       },
     }
   }, {})
-  console.log("companyLogos is ", companyLogos)
+
   return (
     <Layout>
       <div id="experience">
@@ -65,7 +65,7 @@ const Experience = () => {
             alt="ty hyten headshot"
           />
         </div>
-        <Box mt={[4, 3]} className="experience-container">
+        <Box mt={[4, 4]} className="experience-container">
           {experienceJSON.map(job => {
             const jobImage = getImage(companyLogos[job.slug])
 
