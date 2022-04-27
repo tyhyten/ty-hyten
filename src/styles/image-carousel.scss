@@ -8,6 +8,7 @@
     overflow: hidden;
     background-color: rgba(0, 0, 0, 0.75);
     cursor: pointer;
+    z-index: 400px;
   }
 
   .close-icon-wrapper {
@@ -26,11 +27,21 @@
       bottom: 151px;
       left: 65px;
       z-index: 900;
+
       .close-x {
         color: white;
         font-weight: 800;
         cursor: pointer;
         font-size: xx-large;
+
+        @media screen and (max-width: 700px) {
+          font-size: xxx-large;
+        }
+      }
+
+      @media screen and (max-width: 700px) {
+        top: 100px;
+        left: 45px;
       }
     }
   }
