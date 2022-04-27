@@ -21,10 +21,10 @@
     "gatsby-plugin-sharp": "^4.12.1",
     "gatsby-source-filesystem": "^4.0.0",
     "gatsby-transformer-sharp": "^4.12.1",
-    "node-sass": "^7.0.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "rebass": "^4.0.7",
+    "sass": "^1.51.0",
     "sharp": "^0.29.3",
     "typeface-didact-gothic": "0.0.72",
     "typeface-lexend-deca": "^1.1.3"
