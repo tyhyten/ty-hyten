@@ -26,3 +26,5 @@ This is the repo for tyhyten.com, my concert photography portfolio and resume.
 - Add PropTypes
 - Contact page/modal - maybe use React portals
 - Write tests
+
+https://github.com/gatsbyjs/gatsby/issues/35055
