@@ -1,5 +1,27 @@
 [
   {
+    "company": "Outside Interactive",
+    "role": "Software Engineer III",
+    "location": "Denver, CO",
+    "time": {
+      "startDate": "July 2021",
+      "endDate": "Current"
+    },
+    "description": "Working on the Outside Watch video streaming service and Outside Learn education platform (React/Apollo/Node.js).",
+    "slug": "outside_interactive"
+  },
+  {
+    "company": "DispatchHealth",
+    "role": "Frontend Developer",
+    "location": "Denver, CO",
+    "time": {
+      "startDate": "April 2020",
+      "endDate": "July 2021"
+    },
+    "description": "Responsible for the development of DispatchHealth's patient onboarding tool (React/Ruby-on-Rails).",
+    "slug": "dispatch_health"
+  },
+  {
     "company": "AngelMD",
     "role": "Software Developer",
     "location": "Denver, CO",
@@ -7,7 +29,7 @@
       "startDate": "September 2019",
       "endDate": "Current"
     },
-    "description": "Working as a full stack developer on the AngelMD platform, a web app that connects medical startups, physicians, and investors. Responsibilities include adding new features to the AngelMD web app (React and Ruby-on-Rails) and helping build the new AngelMD mobile app (React Native).",
+    "description": "Worked as a full stack developer on the AngelMD platform, a web app that connects medical startups, physicians, and investors. Responsibilities included adding new features to the AngelMD web app (React and Ruby-on-Rails) and helped build the new AngelMD mobile app (React Native).",
     "slug": "angelmd"
   },
   {

@@ -18,7 +18,7 @@ const Experience = () => {
     {
       allFile(
         filter: {
-          extension: { regex: "/(png)/" }
+          extension: { regex: "/(png|jpeg)/" }
           relativeDirectory: { eq: "companyLogos" }
         }
       ) {
@@ -42,7 +42,7 @@ const Experience = () => {
       },
     }
   }, {})
-
+  console.log("companyLogos is ", companyLogos)
   return (
     <Layout>
       <div id="experience">
