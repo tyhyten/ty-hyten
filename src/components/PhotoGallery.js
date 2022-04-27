@@ -38,6 +38,7 @@ const PhotoGallery = ({
 
   // TODO - move inline styles out to stylesheet
   // TODO - don't call both functions inside of onClick
+  // TODO - hide description when carousel is open and display title there
   return (
     <div>
       {images.map((image, i) => {
