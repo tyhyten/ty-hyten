@@ -38,6 +38,7 @@ const PhotoGallery = ({
 
   // TODO - move inline styles out to stylesheet
   // TODO - don't call both functions inside of onClick
+  // TODO - hide description when carousel is open and display title there
   return (
     <div>
       {images.map((image, i) => {
@@ -66,7 +67,7 @@ const PhotoGallery = ({
               position: "relative",
             }}
             onMouseOver={() => setHoverIndex(i)}
-            onMouseLeave={() => setHoverIndex(null)}
+            onMouseOut={() => setHoverIndex(null)}
           >
             {hoverIndex === i && (
               <h3
@@ -77,7 +78,7 @@ const PhotoGallery = ({
                   top: "50%",
                   right: "50%",
                   transform: "translate(50%, -50%)",
-                  zIndex: 900,
+                  zIndex: 400,
                   textTransform: "uppercase",
                 }}
               >

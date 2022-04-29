@@ -10,6 +10,7 @@ const headShotImageStyle = {
   borderRadius: "50%",
   position: "absolute",
   top: "126px",
+  zIndex: 0,
 }
 
 const Experience = () => {

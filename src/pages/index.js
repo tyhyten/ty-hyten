@@ -30,6 +30,7 @@ const Homepage = () => {
               width={400}
               layout="constrained"
               quality={80}
+              // imgStyle={{ borderRadius: "50%" }}
             />
           </div>
         </Box>
@@ -46,6 +47,7 @@ const Homepage = () => {
               width={400}
               layout="constrained"
               quality={80}
+              // imgStyle={{ borderRadius: "50%" }}
             />
           </div>
         </Box>

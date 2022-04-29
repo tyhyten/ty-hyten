@@ -4,6 +4,7 @@
 
   .nav-image {
     border-radius: 50%;
+    z-index: 0;
     max-width: 80%;
     transition: max-width 0.5s ease;
     margin: 0 auto;
