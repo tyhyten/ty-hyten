@@ -25,7 +25,7 @@
     "react-dom": "^16.12.0",
     "rebass": "^4.0.7",
     "sass": "^1.51.0",
-    "sharp": "^0.29.3",
+    "sharp": "^0.30.5",
     "typeface-didact-gothic": "0.0.72",
     "typeface-lexend-deca": "^1.1.3"
   },
