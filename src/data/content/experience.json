@@ -1,13 +1,13 @@
 [
   {
     "company": "Outside Interactive",
-    "role": "Software Engineer III",
+    "role": "Senior Software Engineer",
     "location": "Denver, CO",
     "time": {
       "startDate": "July 2021",
       "endDate": "Current"
     },
-    "description": "Working on the Outside Watch video streaming service and Outside Learn education platform (React/Apollo/Node.js).",
+    "description": "Worked on the Outside Watch video streaming service and Outside Learn education platform (React/Apollo/Node.js). Currently working on SSO across our various domains and applications.",
     "slug": "outside_interactive"
   },
   {
